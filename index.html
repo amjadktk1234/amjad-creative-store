@@ -120,109 +120,37 @@ footer{text-align:center;padding:28px;color:#6b7280}
 </select>
 
 <div class="payment-box">
-<strong>Payment Instructions</strong>
-<p>Payment account details will be displayed here after the payment methods are finalized.</p>
-<p class="small">Please do not send payment until the correct payment details are shown.</p>
+  <strong>Payment Instructions</strong>
+
+  <p id="paymentMessage">
+    Please select a payment method to see the payment instructions.
+  </p>
+
+  <div id="easypaisaDetails" style="display:none;">
+    <strong>Easypaisa</strong>
+    <p>Account Name: YOUR NAME</p>
+    <p>Account Number: YOUR EASYPaisa NUMBER</p>
+  </div>
+
+  <div id="jazzcashDetails" style="display:none;">
+    <strong>JazzCash</strong>
+    <p>Account Name: YOUR NAME</p>
+    <p>Account Number: YOUR JAZZCASH NUMBER</p>
+  </div>
+
+  <div id="bankDetails" style="display:none;">
+    <strong>Bank Transfer</strong>
+    <p>Bank Name: YOUR BANK</p>
+    <p>Account Title: YOUR NAME</p>
+    <p>Account Number / IBAN: YOUR ACCOUNT</p>
+  </div>
+
+  <div id="internationalDetails" style="display:none;">
+    <strong>International Payment</strong>
+    <p>International payment instructions will be provided after order confirmation.</p>
+  </div>
+
+  <p class="small">
+    Please make payment only using the selected method. Your order will be processed after payment is verified.
+  </p>
 </div>
-
-<label>Transaction ID / Reference</label>
-<input type="text" id="transaction" placeholder="Enter transaction ID" required>
-
-<label>Payment Screenshot</label>
-<input type="file" id="screenshot" accept="image/*" required>
-
-<label>Order Instructions</label>
-<textarea id="instructions" placeholder="Tell us what you want in your design..."></textarea>
-
-<div class="cancel-box">
-<strong>Payment verification:</strong>
-<p>If we do not receive the payment within approximately 15–20 minutes after your payment proof is submitted, the order may be cancelled.</p>
-</div>
-
-<button type="submit">Submit Order</button>
-
-</form>
-
-</section>
-
-<section id="how" class="info">
-<h3>How It Works</h3>
-
-<ol>
-<li>Select your design.</li>
-<li>Fill in your order details.</li>
-<li>Make the payment using the available payment method.</li>
-<li>Enter your transaction ID and upload payment proof.</li>
-<li>We verify the payment in our account.</li>
-<li>After successful verification, your design is prepared and delivered manually.</li>
-</ol>
-
-<p class="small">
-Payment screenshots are used only as payment proof. An order is confirmed only after the payment is verified.
-</p>
-</section>
-
-<section id="contact" class="info">
-<h3>Contact</h3>
-<p>For questions about an order, contact the store owner.</p>
-<p class="small">Contact details will be added after the payment system is finalized.</p>
-</section>
-
-</main>
-
-<footer>
-© 2026 Amjad Creative Studio • Digital Design Services
-</footer>
-
-<script>
-
-function openOrder(product, price){
-
-document.getElementById("product").value = product;
-document.getElementById("price").value = price;
-
-const form = document.getElementById("orderForm");
-
-form.style.display = "block";
-
-form.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-function submitOrder(event){
-
-event.preventDefault();
-
-const product = document.getElementById("product").value;
-const price = document.getElementById("price").value;
-const name = document.getElementById("name").value;
-const whatsapp = document.getElementById("whatsapp").value;
-const email = document.getElementById("email").value;
-const payment = document.getElementById("payment").value;
-const transaction = document.getElementById("transaction").value;
-const instructions = document.getElementById("instructions").value;
-
-const message =
-"NEW ORDER\n\n" +
-"Product: " + product + "\n" +
-"Price: " + price + "\n" +
-"Name: " + name + "\n" +
-"WhatsApp: " + whatsapp + "\n" +
-"Email: " + email + "\n" +
-"Payment Method: " + payment + "\n" +
-"Transaction ID: " + transaction + "\n" +
-"Instructions: " + instructions;
-
-const whatsappURL =
-"https://wa.me/?text=" + encodeURIComponent(message);
-
-window.open(whatsappURL,"_blank");
-
-}
-
-</script>
-
-</body>
-</html>
