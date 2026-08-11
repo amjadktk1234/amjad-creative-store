@@ -4,24 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Amjad Creative Studio</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f7fb;color:#171717}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f7f7fb;color:#171717}
 header{background:#111827;color:#fff;padding:28px 18px;text-align:center}
-header h1{margin:0 0 8px;font-size:32px} header p{margin:0;color:#d1d5db}
+header h1{margin:0 0 8px;font-size:32px}
+header p{margin:0;color:#d1d5db}
 nav{padding:14px;text-align:center;background:#fff;border-bottom:1px solid #e5e7eb}
 nav a{margin:0 12px;color:#111827;text-decoration:none;font-weight:600}
 .container{max-width:1000px;margin:auto;padding:28px 18px}
-.hero{text-align:center;padding:25px 0 15px}.hero h2{font-size:28px;margin-bottom:8px}
+.hero{text-align:center;padding:25px 0 15px}
+.hero h2{font-size:28px;margin-bottom:8px}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 5px 20px #0000000a}
-.icon{font-size:42px}.card h3{margin:12px 0 8px}.price{font-size:24px;font-weight:700;margin:14px 0}
+.icon{font-size:42px}
+.card h3{margin:12px 0 8px}
+.price{font-size:24px;font-weight:700;margin:14px 0}
 button{width:100%;border:0;border-radius:10px;padding:12px;background:#111827;color:#fff;font-size:16px;cursor:pointer}
+button:hover{opacity:.9}
 .info{background:#fff;border-radius:16px;padding:22px;margin-top:24px;border:1px solid #e5e7eb}
+.form-box{display:none;background:#fff;border-radius:16px;padding:22px;margin-top:24px;border:1px solid #e5e7eb}
+.form-box h3{margin-top:0}
+label{display:block;font-weight:600;margin-top:14px;margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:9px;font-size:15px}
+textarea{min-height:90px;resize:vertical}
+.notice{background:#f3f4f6;padding:14px;border-radius:10px;margin:15px 0;font-size:14px}
+.payment-box{background:#fff7ed;border:1px solid #fed7aa;padding:14px;border-radius:10px;margin-top:15px}
+.cancel-box{background:#fef2f2;border:1px solid #fecaca;padding:14px;border-radius:10px;margin-top:15px}
 footer{text-align:center;padding:28px;color:#6b7280}
 .small{font-size:13px;color:#6b7280}
 </style>
 </head>
+
 <body>
+
 <header>
 <h1>Amjad Creative Studio</h1>
 <p>AI Designs • Logos • Profile Pictures • Social Media Graphics</p>
@@ -34,18 +51,20 @@ footer{text-align:center;padding:28px;color:#6b7280}
 </nav>
 
 <main class="container">
+
 <section class="hero">
 <h2>Simple, Custom Digital Designs</h2>
 <p>Choose a service, place your order, and receive your finished design digitally.</p>
 </section>
 
 <section id="products" class="products">
+
 <div class="card">
 <div class="icon">🎨</div>
 <h3>Custom AI Logo</h3>
 <p>Professional custom logo concept for a business, page or brand.</p>
 <div class="price">$10</div>
-<button onclick="order('Custom AI Logo','$10')">Buy Now</button>
+<button onclick="openOrder('Custom AI Logo','$10')">Buy Now</button>
 </div>
 
 <div class="card">
@@ -53,7 +72,7 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <h3>AI Profile Picture</h3>
 <p>Custom AI-style profile picture made from your photo and instructions.</p>
 <div class="price">$5</div>
-<button onclick="order('AI Profile Picture','$5')">Buy Now</button>
+<button onclick="openOrder('AI Profile Picture','$5')">Buy Now</button>
 </div>
 
 <div class="card">
@@ -61,36 +80,149 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <h3>Social Media Poster</h3>
 <p>Simple promotional graphic for Facebook, Instagram or WhatsApp.</p>
 <div class="price">$5</div>
-<button onclick="order('Social Media Poster','$5')">Buy Now</button>
+<button onclick="openOrder('Social Media Poster','$5')">Buy Now</button>
 </div>
+
+</section>
+
+<section id="orderForm" class="form-box">
+
+<h3>Place Your Order</h3>
+
+<div class="notice">
+<strong>Important:</strong> Your order will be processed only after we verify your payment in our account.
+</div>
+
+<form onsubmit="submitOrder(event)">
+
+<label>Selected Product</label>
+<input type="text" id="product" readonly>
+
+<label>Price</label>
+<input type="text" id="price" readonly>
+
+<label>Your Name</label>
+<input type="text" id="name" placeholder="Enter your full name" required>
+
+<label>WhatsApp Number</label>
+<input type="tel" id="whatsapp" placeholder="+92XXXXXXXXXX" required>
+
+<label>Email</label>
+<input type="email" id="email" placeholder="your@email.com">
+
+<label>Payment Method</label>
+<select id="payment" required>
+<option value="">Select payment method</option>
+<option>JazzCash</option>
+<option>Easypaisa</option>
+<option>Bank Transfer</option>
+<option>International Payment</option>
+</select>
+
+<div class="payment-box">
+<strong>Payment Instructions</strong>
+<p>Payment account details will be displayed here after the payment methods are finalized.</p>
+<p class="small">Please do not send payment until the correct payment details are shown.</p>
+</div>
+
+<label>Transaction ID / Reference</label>
+<input type="text" id="transaction" placeholder="Enter transaction ID" required>
+
+<label>Payment Screenshot</label>
+<input type="file" id="screenshot" accept="image/*" required>
+
+<label>Order Instructions</label>
+<textarea id="instructions" placeholder="Tell us what you want in your design..."></textarea>
+
+<div class="cancel-box">
+<strong>Payment verification:</strong>
+<p>If we do not receive the payment within approximately 15–20 minutes after your payment proof is submitted, the order may be cancelled.</p>
+</div>
+
+<button type="submit">Submit Order</button>
+
+</form>
+
 </section>
 
 <section id="how" class="info">
 <h3>How It Works</h3>
+
 <ol>
-<li>Select a design.</li>
-<li>Choose the payment method shown at checkout.</li>
-<li>Send the required order details.</li>
-<li>After payment is verified, your digital order is prepared and delivered.</li>
+<li>Select your design.</li>
+<li>Fill in your order details.</li>
+<li>Make the payment using the available payment method.</li>
+<li>Enter your transaction ID and upload payment proof.</li>
+<li>We verify the payment in our account.</li>
+<li>After successful verification, your design is prepared and delivered manually.</li>
 </ol>
-<p class="small">Payment methods and automatic delivery will be connected after we verify which methods are actually available for Pakistan.</p>
+
+<p class="small">
+Payment screenshots are used only as payment proof. An order is confirmed only after the payment is verified.
+</p>
 </section>
 
 <section id="contact" class="info">
 <h3>Contact</h3>
 <p>For questions about an order, contact the store owner.</p>
-<p class="small">We will add the final WhatsApp/email/contact details later.</p>
+<p class="small">Contact details will be added after the payment system is finalized.</p>
 </section>
+
 </main>
 
-<footer>© 2026 Amjad Creative Studio • Digital Design Services</footer>
+<footer>
+© 2026 Amjad Creative Studio • Digital Design Services
+</footer>
 
 <script>
-function order(product, price){
-  const msg = `I want to order ${product} (${price}). Please send me the payment and order instructions.`;
-  const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
-  window.open(url,'_blank');
+
+function openOrder(product, price){
+
+document.getElementById("product").value = product;
+document.getElementById("price").value = price;
+
+const form = document.getElementById("orderForm");
+
+form.style.display = "block";
+
+form.scrollIntoView({
+behavior:"smooth"
+});
+
 }
+
+function submitOrder(event){
+
+event.preventDefault();
+
+const product = document.getElementById("product").value;
+const price = document.getElementById("price").value;
+const name = document.getElementById("name").value;
+const whatsapp = document.getElementById("whatsapp").value;
+const email = document.getElementById("email").value;
+const payment = document.getElementById("payment").value;
+const transaction = document.getElementById("transaction").value;
+const instructions = document.getElementById("instructions").value;
+
+const message =
+"NEW ORDER\n\n" +
+"Product: " + product + "\n" +
+"Price: " + price + "\n" +
+"Name: " + name + "\n" +
+"WhatsApp: " + whatsapp + "\n" +
+"Email: " + email + "\n" +
+"Payment Method: " + payment + "\n" +
+"Transaction ID: " + transaction + "\n" +
+"Instructions: " + instructions;
+
+const whatsappURL =
+"https://wa.me/?text=" + encodeURIComponent(message);
+
+window.open(whatsappURL,"_blank");
+
+}
+
 </script>
+
 </body>
 </html>
