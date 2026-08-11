@@ -1,1637 +1,538 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Digital Creative Studio</title>
-
-<meta name="description"
-content="Digital Creative Studio - AI Logos, Profile Pictures and Social Media Designs">
-
-<meta name="theme-color" content="#111827">
-
-<!-- Website/App Logo -->
-<link rel="icon"
-href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-<rect width='100' height='100' rx='22' fill='%23111827'/>
-<text x='50' y='70' text-anchor='middle'
-font-size='62' font-family='Arial' fill='%23facc15'>D</text>
-</svg>">
+<title>Digital Creative Store</title>
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
-
-*{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f7f7fb;
-color:#171717;
-}
-
-a{
-text-decoration:none;
-}
-
-button,
-input,
-select,
-textarea{
-font-family:inherit;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-background:linear-gradient(135deg,#070d1d,#111827,#312e81);
-color:white;
-padding:22px 18px;
-}
-
-.header-inner{
-max-width:1150px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.logo{
-width:58px;
-height:58px;
-border-radius:16px;
-background:#111827;
-border:2px solid #facc15;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:36px;
-font-weight:bold;
-color:#facc15;
-box-shadow:0 5px 20px #0005;
-}
-
-.brand-text h1{
-margin:0;
-font-size:25px;
-}
-
-.brand-text p{
-margin:5px 0 0;
-color:#d1d5db;
-font-size:13px;
-}
-
-.header-download{
-background:#facc15;
-color:#111827;
-padding:12px 18px;
-border-radius:10px;
-font-weight:700;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav{
-background:white;
-border-bottom:1px solid #e5e7eb;
-position:sticky;
-top:0;
-z-index:50;
-}
-
-.nav-inner{
-max-width:1150px;
-margin:auto;
-padding:13px 16px;
-display:flex;
-justify-content:center;
-gap:25px;
-}
-
-nav a{
-color:#111827;
-font-weight:600;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-background:linear-gradient(135deg,#0b1020,#171f3b);
-color:white;
-padding:55px 18px;
-}
-
-.hero-inner{
-max-width:1150px;
-margin:auto;
-display:grid;
-grid-template-columns:1.4fr 1fr;
-align-items:center;
-gap:30px;
-}
-
-.hero h2{
-font-size:48px;
-margin:0 0 15px;
-}
-
-.hero h2 span{
-color:#facc15;
-}
-
-.hero p{
-font-size:18px;
-color:#d1d5db;
-line-height:1.6;
-}
-
-.hero-buttons{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:25px;
-}
-
-.primary-btn,
-.secondary-btn{
-padding:14px 22px;
-border-radius:11px;
-font-weight:700;
-display:inline-block;
-}
-
-.primary-btn{
-background:#facc15;
-color:#111827;
-}
-
-.secondary-btn{
-border:1px solid #fff;
-color:white;
-}
-
-.hero-logo{
-width:230px;
-height:230px;
-border-radius:45px;
-margin:auto;
-background:#111827;
-border:4px solid #facc15;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:130px;
-font-weight:bold;
-color:#facc15;
-box-shadow:0 15px 50px #0008;
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-max-width:1150px;
-margin:auto;
-padding:25px 16px;
-}
-
-.section-title{
-text-align:center;
-margin:15px 0 25px;
-}
-
-.section-title h2{
-font-size:30px;
-margin:0 0 8px;
-}
-
-.small{
-font-size:13px;
-color:#6b7280;
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-.controls{
-background:white;
-border:1px solid #e5e7eb;
-border-radius:16px;
-padding:15px;
-margin-bottom:25px;
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:10px;
-}
-
-.controls input,
-.controls select{
-padding:14px;
-border:1px solid #d1d5db;
-border-radius:10px;
-font-size:15px;
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
-
-.products{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(235px,1fr));
-gap:18px;
-}
-
-.category-title{
-grid-column:1/-1;
-margin:20px 0 0;
-font-size:22px;
-}
-
-.card{
-background:white;
-border:1px solid #e5e7eb;
-border-radius:17px;
-padding:15px;
-box-shadow:0 5px 20px #0000000a;
-transition:.2s;
-}
-
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px #0002;
-}
-
-.product-image{
-width:100%;
-height:175px;
-object-fit:cover;
-border-radius:12px;
-background:#eef2ff;
-}
-
-.icon{
-height:175px;
-border-radius:12px;
-background:
-linear-gradient(135deg,#eef2ff,#e0e7ff);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:60px;
-}
-
-.card h3{
-margin:13px 0 7px;
-}
-
-.card p{
-color:#555;
-min-height:40px;
-line-height:1.45;
-}
-
-.price{
-font-size:23px;
-font-weight:800;
-}
-
-.price-pkr{
-font-size:14px;
-color:#6b7280;
-margin:5px 0 14px;
-}
-
-.buy-btn{
-width:100%;
-border:0;
-border-radius:10px;
-padding:13px;
-background:#111827;
-color:white;
-font-size:16px;
-font-weight:700;
-cursor:pointer;
-}
-
-.buy-btn:hover{
-background:#312e81;
-}
-
-
-/* =========================
-   ORDER FORM
-========================= */
-
-.form-box,
-.info,
-.admin{
-background:white;
-border-radius:17px;
-padding:22px;
-margin-top:25px;
-border:1px solid #e5e7eb;
-}
-
-.form-box{
-display:none;
-}
-
-label{
-display:block;
-font-weight:700;
-margin-top:14px;
-margin-bottom:6px;
-}
-
-input,
-select,
-textarea{
-width:100%;
-padding:12px;
-border:1px solid #d1d5db;
-border-radius:9px;
-font-size:15px;
-}
-
-textarea{
-min-height:100px;
-resize:vertical;
-}
-
-.notice{
-background:#f3f4f6;
-padding:14px;
-border-radius:10px;
-margin:15px 0;
-font-size:14px;
-}
-
-.submit-btn{
-width:100%;
-margin-top:20px;
-padding:14px;
-border:0;
-border-radius:10px;
-background:#111827;
-color:white;
-font-size:17px;
-font-weight:700;
-cursor:pointer;
-}
-
-
-/* =========================
-   PAYMENT
-========================= */
-
-.payment-box{
-background:#fff7ed;
-border:1px solid #fed7aa;
-padding:15px;
-border-radius:12px;
-margin-top:15px;
-}
-
-.payment-details{
-display:none;
-margin-top:12px;
-padding:14px;
-background:white;
-border-radius:10px;
-border:1px solid #eee;
-}
-
-.payment-details strong{
-font-size:17px;
-}
-
-
-/* =========================
-   DOWNLOAD APP
-========================= */
-
-.app-download{
-background:linear-gradient(135deg,#111827,#312e81);
-color:white;
-border-radius:18px;
-padding:25px;
-margin-top:25px;
-display:grid;
-grid-template-columns:1fr auto;
-align-items:center;
-gap:20px;
-}
-
-.app-download h2{
-margin-top:0;
-}
-
-.app-logo-small{
-width:90px;
-height:90px;
-border-radius:22px;
-background:#111827;
-border:3px solid #facc15;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:55px;
-font-weight:bold;
-color:#facc15;
-}
-
-.download-btn{
-display:inline-block;
-background:#facc15;
-color:#111827;
-padding:14px 22px;
-border-radius:11px;
-font-weight:800;
-margin-top:10px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-buttons{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:15px;
-}
-
-.contact-buttons a{
-display:block;
-text-align:center;
-padding:13px;
-border-radius:10px;
-background:#111827;
-color:white;
-font-weight:700;
-}
-
-
-/* =========================
-   ADMIN
-========================= */
-
-.admin{
-margin-bottom:25px;
-}
-
-.admin button{
-width:100%;
-border:0;
-border-radius:10px;
-padding:13px;
-background:#111827;
-color:white;
-font-weight:700;
-margin-top:10px;
-cursor:pointer;
-}
-
-.admin-list{
-margin-top:15px;
-}
-
-.admin-item{
-padding:11px;
-border:1px solid #ddd;
-border-radius:9px;
-margin-top:8px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-}
-
-.delete{
-background:#dc2626!important;
-width:auto!important;
-padding:8px 12px!important;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-background:#0b1020;
-color:#d1d5db;
-padding:30px 18px;
-margin-top:30px;
-}
-
-.footer-inner{
-max-width:1150px;
-margin:auto;
-text-align:center;
-}
-
-.footer-logo{
-font-size:22px;
-font-weight:800;
-color:white;
-}
-
-.footer-logo span{
-color:#facc15;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:750px){
-
-.header-inner{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-inner{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero h2{
-font-size:36px;
-}
-
-.hero-logo{
-width:170px;
-height:170px;
-font-size:90px;
-}
-
-.controls{
-grid-template-columns:1fr;
-}
-
-.app-download{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.app-logo-small{
-margin:auto;
-}
-
-.contact-buttons{
-grid-template-columns:1fr;
-}
-
-.nav-inner{
-gap:12px;
-flex-wrap:wrap;
-}
-
-}
-
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:linear-gradient(135deg,#111827,#374151);color:white;padding:35px 18px;text-align:center}
+.logo{width:90px;height:90px;margin:auto;border-radius:50%;background:white;color:#111827;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:bold}
+header h1{margin:15px 0 8px;font-size:32px}
+header p{margin:0;color:#d1d5db}
+nav{background:white;padding:15px;text-align:center;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:10}
+nav a{margin:0 10px;text-decoration:none;color:#111827;font-weight:bold}
+.container{max-width:1150px;margin:auto;padding:25px 16px}
+.hero{text-align:center;padding:15px 0 30px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.category{grid-column:1/-1;margin-top:25px}
+.card{background:white;border-radius:18px;padding:15px;border:1px solid #e5e7eb;box-shadow:0 5px 20px #0000000b}
+.product-image{height:170px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:75px;background:linear-gradient(135deg,#eef2ff,#f3f4f6)}
+.card h3{margin:15px 0 8px}
+.card p{color:#6b7280;min-height:40px}
+.price{font-size:24px;font-weight:bold;margin:12px 0 2px}
+.pkr{color:#6b7280;font-size:14px;margin-bottom:14px}
+button{width:100%;border:0;padding:13px;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold;cursor:pointer}
+.form-box{display:none;background:white;padding:25px;border-radius:18px;margin-top:35px;border:1px solid #ddd}
+label{display:block;font-weight:bold;margin-top:15px;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font-size:15px}
+textarea{min-height:100px}
+.payment{background:#fff7ed;border:1px solid #fed7aa;padding:18px;border-radius:12px;margin-top:20px}
+.payment-details{display:none;background:white;padding:15px;border-radius:10px;margin-top:12px}
+.notice{background:#eef2ff;padding:15px;border-radius:10px;margin:15px 0}
+.success{display:none;background:#ecfdf5;border:1px solid #a7f3d0;padding:20px;border-radius:15px;margin-top:20px}
+.contact{background:white;padding:25px;border-radius:18px;margin-top:35px;text-align:center}
+.whatsapp{display:inline-block;background:#25D366;color:white;padding:13px 25px;border-radius:10px;text-decoration:none;font-weight:bold}
+footer{text-align:center;padding:30px;color:#6b7280}
+.small{font-size:13px;color:#6b7280}
+.order-summary{background:#f3f4f6;padding:15px;border-radius:10px;margin-bottom:15px}
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
-<div class="header-inner">
-
-<div class="brand">
-
-<div class="logo">
-D
-</div>
-
-<div class="brand-text">
-
-<h1>Digital Creative Studio</h1>
-
-<p>
-AI Designs • Logos • Profile Pictures • Social Media Graphics
-</p>
-
-</div>
-
-</div>
-
-
-<a
-href="DigitalCreativeStudio.apk"
-download
-class="header-download">
-
-📱 Download App
-
-</a>
-
-</div>
-
+<div class="logo">DCS</div>
+<h1>Digital Creative Store</h1>
+<p>AI Designs • Logos • Profile Pictures • Social Media Graphics</p>
 </header>
 
-
-<!-- =========================
-     NAV
-========================= -->
-
 <nav>
-
-<div class="nav-inner">
-
-<a href="#home">Home</a>
 <a href="#products">Products</a>
 <a href="#how">How It Works</a>
 <a href="#contact">Contact</a>
-
-</div>
-
 </nav>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section id="home" class="hero">
-
-<div class="hero-inner">
-
-<div>
-
-<h2>
-Digital Creative
-<span>Studio</span>
-</h2>
-
-<p>
-AI Designs • Logos • Profile Pictures • Social Media Graphics
-</p>
-
-<p>
-خوابوں کو خوبصورت Digital Art میں بدلیں۔
-اپنی پسند کا design منتخب کریں اور online order کریں۔
-</p>
-
-<div class="hero-buttons">
-
-<a
-href="#products"
-class="primary-btn">
-
-🛒 Browse Products
-
-</a>
-
-
-<a
-href="DigitalCreativeStudio.apk"
-download
-class="secondary-btn">
-
-📱 Download Android App
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="hero-logo">
-
-D
-
-</div>
-
-</div>
-
-</section>
-
 
 <main class="container">
 
+<section class="hero">
+<h2>Choose Your Design</h2>
+<p>Select a product and place your order directly through our website.</p>
+<p class="small">USD prices are shown with automatic PKR conversion.</p>
+</section>
 
-<!-- =========================
-     PRODUCTS
-========================= -->
+<section id="products" class="products">
 
-<section id="products">
+<h2 class="category">🎨 AI Logos</h2>
 
-<div class="section-title">
-
-<h2>🔥 Our Creative Products</h2>
-
-<p>
-Choose your favorite design and place your order.
-</p>
-
+<div class="card">
+<div class="product-image">🎨</div>
+<h3>Minimal Business Logo</h3>
+<p>Clean professional logo for your business.</p>
+<div class="price">$10</div>
+<div class="pkr" data-usd="10">Calculating...</div>
+<button onclick="buyNow('Minimal Business Logo',10)">Buy Now</button>
 </div>
 
-
-<div class="controls">
-
-<input
-type="search"
-id="search"
-placeholder="🔎 Search for designs..."
-oninput="renderProducts()">
-
-
-<select
-id="category"
-onchange="renderProducts()">
-
-<option value="All">
-All Categories
-</option>
-
-<option value="AI Logos">
-AI Logos
-</option>
-
-<option value="AI Profile Pictures">
-Profile Pictures
-</option>
-
-<option value="Social Media Designs">
-Social Media Designs
-</option>
-
-<option value="Business Graphics">
-Business Graphics
-</option>
-
-</select>
-
+<div class="card">
+<div class="product-image">👑</div>
+<h3>Luxury Logo</h3>
+<p>Premium elegant logo for brands.</p>
+<div class="price">$15</div>
+<div class="pkr" data-usd="15">Calculating...</div>
+<button onclick="buyNow('Luxury Logo',15)">Buy Now</button>
 </div>
 
+<div class="card">
+<div class="product-image">💎</div>
+<h3>3D Logo</h3>
+<p>Modern professional 3D logo design.</p>
+<div class="price">$15</div>
+<div class="pkr" data-usd="15">Calculating...</div>
+<button onclick="buyNow('3D Logo',15)">Buy Now</button>
+</div>
 
-<div
-id="productsGrid"
-class="products">
+<div class="card">
+<div class="product-image">🎮</div>
+<h3>Gaming Logo</h3>
+<p>Gaming logo for channels and brands.</p>
+<div class="price">$12</div>
+<div class="pkr" data-usd="12">Calculating...</div>
+<button onclick="buyNow('Gaming Logo',12)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">🍔</div>
+<h3>Restaurant Logo</h3>
+<p>Creative logo for food businesses.</p>
+<div class="price">$12</div>
+<div class="pkr" data-usd="12">Calculating...</div>
+<button onclick="buyNow('Restaurant Logo',12)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">▶️</div>
+<h3>YouTube Logo</h3>
+<p>Professional logo for YouTube creators.</p>
+<div class="price">$10</div>
+<div class="pkr" data-usd="10">Calculating...</div>
+<button onclick="buyNow('YouTube Logo',10)">Buy Now</button>
+</div>
+
+<h2 class="category">🖼️ AI Profile Pictures</h2>
+
+<div class="card">
+<div class="product-image">👔</div>
+<h3>Professional Portrait</h3>
+<p>Professional AI profile portrait.</p>
+<div class="price">$5</div>
+<div class="pkr" data-usd="5">Calculating...</div>
+<button onclick="buyNow('Professional Portrait',5)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">💼</div>
+<h3>Business Profile</h3>
+<p>Professional business profile picture.</p>
+<div class="price">$7</div>
+<div class="pkr" data-usd="7">Calculating...</div>
+<button onclick="buyNow('Business Profile',7)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">🤖</div>
+<h3>3D Avatar</h3>
+<p>Modern AI 3D social media avatar.</p>
+<div class="price">$8</div>
+<div class="pkr" data-usd="8">Calculating...</div>
+<button onclick="buyNow('3D Avatar',8)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">🎭</div>
+<h3>Cartoon Avatar</h3>
+<p>Creative cartoon-style profile picture.</p>
+<div class="price">$6</div>
+<div class="pkr" data-usd="6">Calculating...</div>
+<button onclick="buyNow('Cartoon Avatar',6)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">🎮</div>
+<h3>Gaming Avatar</h3>
+<p>Gaming profile picture.</p>
+<div class="price">$8</div>
+<div class="pkr" data-usd="8">Calculating...</div>
+<button onclick="buyNow('Gaming Avatar',8)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">📸</div>
+<h3>Social Media DP</h3>
+<p>Stylish social media display picture.</p>
+<div class="price">$5</div>
+<div class="pkr" data-usd="5">Calculating...</div>
+<button onclick="buyNow('Social Media DP',5)">Buy Now</button>
+</div>
+
+<h2 class="category">📱 Social Media Designs</h2>
+
+<div class="card">
+<div class="product-image">📘</div>
+<h3>Facebook Poster</h3>
+<p>Promotional Facebook design.</p>
+<div class="price">$5</div>
+<div class="pkr" data-usd="5">Calculating...</div>
+<button onclick="buyNow('Facebook Poster',5)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">📷</div>
+<h3>Instagram Post</h3>
+<p>Professional Instagram design.</p>
+<div class="price">$5</div>
+<div class="pkr" data-usd="5">Calculating...</div>
+<button onclick="buyNow('Instagram Post',5)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">💬</div>
+<h3>WhatsApp Promotion</h3>
+<p>WhatsApp promotional graphic.</p>
+<div class="price">$5</div>
+<div class="pkr" data-usd="5">Calculating...</div>
+<button onclick="buyNow('WhatsApp Promotion',5)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">▶️</div>
+<h3>YouTube Thumbnail</h3>
+<p>Click-worthy YouTube thumbnail.</p>
+<div class="price">$6</div>
+<div class="pkr" data-usd="6">Calculating...</div>
+<button onclick="buyNow('YouTube Thumbnail',6)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">📢</div>
+<h3>Business Advertisement</h3>
+<p>Professional business advertisement.</p>
+<div class="price">$8</div>
+<div class="pkr" data-usd="8">Calculating...</div>
+<button onclick="buyNow('Business Advertisement',8)">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="product-image">🔥</div>
+<h3>Sale Discount Poster</h3>
+<p>Eye-catching sale promotion.</p>
+<div class="price">$7</div>
+<div class="pkr" data-usd="7">Calculating...</div>
+<button onclick="buyNow('Sale Discount Poster',7)">Buy Now</button>
 </div>
 
 </section>
 
+<section id="orderForm" class="form-box">
 
-<!-- =========================
-     ORDER FORM
-========================= -->
+<h2>🛒 Complete Your Order</h2>
 
-<section
-id="orderForm"
-class="form-box">
-
-<h2>🛒 Place Your Order</h2>
-
-
-<div class="notice">
-
-<strong>Payment Verification:</strong>
-
-Your order will be processed only after
-payment is verified in our account.
-
+<div class="order-summary">
+<strong>Selected Product:</strong>
+<div id="selectedProduct"></div>
+<strong>Price:</strong>
+<div id="selectedPrice"></div>
 </div>
-
 
 <form id="orderFormElement">
 
+<label>Your Name</label>
+<input type="text" id="customerName" placeholder="Enter your full name" required>
 
-<label>
-Selected Product
-</label>
+<label>WhatsApp Number</label>
+<input type="tel" id="customerWhatsApp" placeholder="+92XXXXXXXXXX" required>
 
-<input
-type="text"
-id="product"
-readonly>
+<label>Email Address</label>
+<input type="email" id="customerEmail" placeholder="your@email.com">
 
+<label>Payment Method</label>
 
-<label>
-Price
-</label>
-
-<input
-type="text"
-id="price"
-readonly>
-
-
-<label>
-Your Name
-</label>
-
-<input
-type="text"
-id="name"
-placeholder="Enter your full name"
-required>
-
-
-<label>
-WhatsApp Number
-</label>
-
-<input
-type="tel"
-id="whatsapp"
-placeholder="+92XXXXXXXXXX"
-required>
-
-
-<label>
-Email
-</label>
-
-<input
-type="email"
-id="email"
-placeholder="your@email.com">
-
-
-<label>
-Payment Method
-</label>
-
-<select
-id="payment"
-required
-onchange="showPaymentDetails()">
-
-<option value="">
-Select payment method
-</option>
-
-<option value="Easypaisa">
-Easypaisa
-</option>
-
-<option value="JazzCash">
-JazzCash
-</option>
-
-<option value="Bank Transfer">
-Bank Transfer
-</option>
-
-<option value="International Payment">
-International Payment
-</option>
-
+<select id="paymentMethod" onchange="paymentChanged()" required>
+<option value="">Select Payment Method</option>
+<option value="Easypaisa">Easypaisa</option>
+<option value="JazzCash">JazzCash</option>
+<option value="Bank Transfer">Bank Transfer — Coming Soon</option>
+<option value="International Payment">International Payment — Coming Soon</option>
 </select>
 
+<div class="payment">
 
-<div class="payment-box">
+<strong>Payment Information</strong>
 
-<strong>
-💳 Payment Instructions
-</strong>
+<p id="paymentMessage">Select a payment method.</p>
 
-<p id="paymentMessage">
-Please select a payment method above.
-</p>
-
-
-<div
-id="easypaisa"
-class="payment-details">
-
-<strong>
-Easypaisa
-</strong>
-
-<p>
-Account Name: Amjad Khan
-</p>
-
-<p>
-Account Number: 03438038809
-</p>
-
+<div id="easypaisa" class="payment-details">
+<strong>Easypaisa</strong>
+<p>Account Name: Amjad Khan</p>
+<p>Account Number: 03438038809</p>
+<p class="small">Pay the exact PKR amount shown above.</p>
 </div>
 
-
-<div
-id="jazzcash"
-class="payment-details">
-
-<strong>
-JazzCash
-</strong>
-
-<p>
-Account Name: Amjad Khan
-</p>
-
-<p>
-Account Number: 03419575908
-</p>
-
+<div id="jazzcash" class="payment-details">
+<strong>JazzCash</strong>
+<p>Account Name: Amjad Khan</p>
+<p>Account Number: 03419575908</p>
+<p class="small">Pay the exact PKR amount shown above.</p>
 </div>
 
-
-<div
-id="bank"
-class="payment-details">
-
-<strong>
-Bank Transfer
-</strong>
-
-<p>
-Coming Soon
-</p>
-
+<div id="bank" class="payment-details">
+<strong>Bank Transfer</strong>
+<p>Coming Soon</p>
 </div>
 
-
-<div
-id="international"
-class="payment-details">
-
-<strong>
-International Payment
-</strong>
-
-<p>
-Coming Soon
-</p>
-
+<div id="international" class="payment-details">
+<strong>International Payment</strong>
+<p>Coming Soon</p>
 </div>
 
 </div>
 
+<label>Transaction ID / Reference</label>
+<input type="text" id="transactionId" placeholder="Enter transaction ID" required>
 
-<label>
-Transaction ID / Reference
-</label>
+<label>Payment Screenshot</label>
+<input type="file" id="paymentScreenshot" accept="image/*" required>
 
-<input
-type="text"
-id="transaction"
-placeholder="Enter transaction ID"
-required>
+<label>Order Instructions</label>
+<textarea id="orderInstructions" placeholder="Tell us exactly what you want..."></textarea>
 
+<div class="notice">
+<strong>Important:</strong>
+Your order will be processed after payment is verified.
+</div>
 
-<label>
-Payment Screenshot
-</label>
-
-<input
-type="file"
-id="screenshot"
-accept="image/*"
-required>
-
-
-<label>
-Order Instructions
-</label>
-
-<textarea
-id="instructions"
-placeholder="Tell us what you want in your design...">
-</textarea>
-
-
-<button
-type="submit"
-class="submit-btn">
-
-📱 Submit Order on WhatsApp
-
-</button>
+<button type="submit">✅ Submit Order</button>
 
 </form>
 
-</section>
-
-
-<!-- =========================
-     HOW IT WORKS
-========================= -->
-
-<section
-id="how"
-class="info">
-
-<h2>
-⚙️ How It Works
-</h2>
-
-<ol>
-
-<li>
-Choose your preferred product.
-</li>
-
-<li>
-Click Buy Now.
-</li>
-
-<li>
-Enter your customer details.
-</li>
-
-<li>
-Select Easypaisa or JazzCash.
-</li>
-
-<li>
-Make the payment.
-</li>
-
-<li>
-Enter Transaction ID.
-</li>
-
-<li>
-Upload payment screenshot.
-</li>
-
-<li>
-Submit the order.
-</li>
-
-<li>
-Order details open in WhatsApp.
-</li>
-
-<li>
-Payment is manually verified.
-</li>
-
-<li>
-Your digital design is prepared and delivered.
-</li>
-
-</ol>
-
-<p class="small">
-
-A screenshot alone does not confirm payment.
-Payment must be verified in the account.
-
-</p>
+<div id="successBox" class="success">
+<h3>✅ Order Submitted</h3>
+<p>Your order details have been prepared successfully.</p>
+<p class="small">Please keep your transaction ID and payment screenshot safely.</p>
+</div>
 
 </section>
 
+<section id="how" class="contact">
 
-<!-- =========================
-     APP DOWNLOAD
-========================= -->
+<h2>How It Works</h2>
 
-<section class="app-download">
+<p>1️⃣ Select your product</p>
+<p>2️⃣ Click Buy Now</p>
+<p>3️⃣ Enter your details</p>
+<p>4️⃣ Select Easypaisa or JazzCash</p>
+<p>5️⃣ Make payment</p>
+<p>6️⃣ Enter transaction ID</p>
+<p>7️⃣ Upload payment screenshot</p>
+<p>8️⃣ Submit your order</p>
 
-<div>
+</section>
 
-<h2>
-📱 Digital Creative Studio Android App
-</h2>
+<section id="contact" class="contact">
 
-<p>
-ہماری Android App اپنے موبائل میں install کریں
-اور Digital Creative Studio آسانی سے استعمال کریں۔
-</p>
+<h2>📞 Contact Us</h2>
 
-<p>
-App میں Products، Buy Now، Orders اور Contact
-کا آسان access ہوگا۔
-</p>
+<p>Need help? Contact us directly on WhatsApp.</p>
 
-<a
-href="DigitalCreativeStudio.apk"
-download
-class="download-btn">
-
-🤖 Download APK
-
+<a class="whatsapp" href="https://wa.me/923438038809" target="_blank">
+WhatsApp Direct Contact
 </a>
 
-</div>
-
-
-<div class="app-logo-small">
-
-D
-
-</div>
-
 </section>
-
-
-<!-- =========================
-     DIRECT CONTACT
-========================= -->
-
-<section
-id="contact"
-class="info">
-
-<h2>
-📞 Contact Us
-</h2>
-
-<p>
-WhatsApp یہاں صرف direct contact کے لیے ہے۔
-خریداری کے لیے Product پر Buy Now استعمال کریں۔
-</p>
-
-
-<div class="contact-buttons">
-
-<a
-href="https://wa.me/923438038809"
-target="_blank">
-
-💬 WhatsApp
-
-</a>
-
-
-<a
-href="mailto:YOUR_EMAIL_ADDRESS">
-
-📧 Email
-
-</a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     PRODUCT MANAGER
-========================= -->
-
-<section class="admin">
-
-<h2>
-🛠️ Product Gallery Manager
-</h2>
-
-<p class="small">
-
-یہاں سے آپ نئے products اور تصاویر شامل کر سکتے ہیں۔
-یہ products اسی browser میں محفوظ رہیں گے۔
-
-</p>
-
-
-<label>
-Product Name
-</label>
-
-<input
-id="newName"
-placeholder="Product name">
-
-
-<label>
-Category
-</label>
-
-<select id="newCategory">
-
-<option>
-AI Logos
-</option>
-
-<option>
-AI Profile Pictures
-</option>
-
-<option>
-Social Media Designs
-</option>
-
-<option>
-Business Graphics
-</option>
-
-</select>
-
-
-<label>
-Price USD
-</label>
-
-<input
-id="newPrice"
-type="number"
-placeholder="10">
-
-
-<label>
-Description
-</label>
-
-<textarea
-id="newDescription"
-placeholder="Product description">
-</textarea>
-
-
-<label>
-Image URL
-</label>
-
-<input
-id="newImage"
-placeholder="https://example.com/image.jpg">
-
-
-<button
-onclick="addProduct()">
-
-➕ Add Product to Gallery
-
-</button>
-
-
-<div
-id="adminList"
-class="admin-list">
-</div>
-
-</section>
-
 
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
-
-<div class="footer-inner">
-
-<div class="footer-logo">
-
-Digital <span>Creative Studio</span>
-
-</div>
-
-<p>
-AI Designs • Logos • Profile Pictures • Social Media Graphics
-</p>
-
-<p>
-© 2026 Digital Creative Studio. All Rights Reserved.
-</p>
-
-</div>
-
+© 2026 Digital Creative Store
 </footer>
-
 
 <script>
 
+let usdToPkr = 278;
+let currentProduct = "";
+let currentUSD = 0;
+let currentPKR = 0;
 
-/* ==================================================
-   MAIN SETTINGS
-================================================== */
-
-
-/* آپ کا WhatsApp نمبر */
-const ownerWhatsApp =
-"923438038809";
-
-
-/* Backup USD → PKR rate */
-let usdToPkr =
-278;
-
-
-/* ==================================================
-   PRODUCTS
-================================================== */
-
-const defaultProducts = [
-
-{
-name:"Minimal Business Logo",
-category:"AI Logos",
-price:10,
-icon:"🎨",
-description:
-"Clean professional logo for your business."
-},
-
-{
-name:"Luxury Logo",
-category:"AI Logos",
-price:15,
-icon:"👑",
-description:
-"Premium elegant logo for brands and businesses."
-},
-
-{
-name:"3D Logo",
-category:"AI Logos",
-price:15,
-icon:"💎",
-description:
-"Modern 3D logo concept for your brand."
-},
-
-{
-name:"Gaming Logo",
-category:"AI Logos",
-price:12,
-icon:"🎮",
-description:
-"Gaming-style logo for gamers and channels."
-},
-
-{
-name:"Restaurant Logo",
-category:"AI Logos",
-price:12,
-icon:"🍔",
-description:
-"Creative logo for restaurants and food businesses."
-},
-
-{
-name:"YouTube Logo",
-category:"AI Logos",
-price:10,
-icon:"▶️",
-description:
-"Custom logo for YouTubers and creators."
-},
-
-
-{
-name:"Professional Portrait",
-category:"AI Profile Pictures",
-price:5,
-icon:"👔",
-description:
-"Professional AI portrait for your profile."
-},
-
-{
-name:"Business Profile",
-category:"AI Profile Pictures",
-price:7,
-icon:"💼",
-description:
-"Professional business profile picture."
-},
-
-{
-name:"3D Avatar",
-category:"AI Profile Pictures",
-price:8,
-icon:"🤖",
-description:
-"Modern AI 3D avatar for social media."
-},
-
-{
-name:"Cartoon Avatar",
-category:"AI Profile Pictures",
-price:6,
-icon:"🎭",
-description:
-"Fun cartoon-style AI profile picture."
-},
-
-{
-name:"Gaming Avatar",
-category:"AI Profile Pictures",
-price:8,
-icon:"🎮",
-description:
-"Gaming-inspired AI profile picture."
-},
-
-{
-name:"Social Media DP",
-category:"AI Profile Pictures",
-price:5,
-icon:"📸",
-description:
-"Stylish AI display picture for social media."
-},
-
-
-{
-name:"Facebook Poster",
-category:"Social Media Designs",
-price:5,
-icon:"📘",
-description:
-"Promotional design for Facebook."
-},
-
-{
-name:"Instagram Post",
-category:"Social Media Designs",
-price:5,
-icon:"📷",
-description:
-"Eye-catching Instagram promotional design."
-},
-
-{
-name:"WhatsApp Promotion",
-category:"Social Media Designs",
-price:5,
-icon:"💬",
-description:
-"Promotional graphic for WhatsApp marketing."
-},
-
-{
-name:"YouTube Thumbnail",
-category:"Social Media Designs",
-price:6,
-icon:"▶️",
-description:
-"Click-worthy YouTube thumbnail design."
-},
-
-{
-name:"Business Advertisement",
-category:"Business Graphics",
-price:8,
-icon:"📢",
-description:
-"Professional promotional advertisement."
-},
-
-{
-name:"Sale Discount Poster",
-category:"Business Graphics",
-price:7,
-icon:"🔥",
-description:
-"Eye-catching sale and discount design."
-}
-
-];
-
-
-/* ==================================================
-   LOAD PRODUCTS
-================================================== */
-
-let products =
-JSON.parse(
-localStorage.getItem(
-"DCS_PRODUCTS"
-)
-) || defaultProducts;
-
-
-/* ==================================================
-   SAVE PRODUCTS
-================================================== */
-
-function saveProducts(){
-
-localStorage.setItem(
-"DCS_PRODUCTS",
-JSON.stringify(products)
-);
-
-}
-
-
-/* ==================================================
-   EXCHANGE RATE
-================================================== */
-
-async function getExchangeRate(){
+async function exchangeRate(){
 
 try{
 
 const response =
-await fetch(
-"https://open.er-api.com/v6/latest/USD"
-);
+await fetch("https://open.er-api.com/v6/latest/USD");
 
 const data =
 await response.json();
 
-if(
-data.rates &&
-data.rates.PKR
-){
-
-usdToPkr =
-data.rates.PKR;
-
+if(data.rates && data.rates.PKR){
+usdToPkr = data.rates.PKR;
 }
 
 }catch(error){
+console.log("Using backup PKR rate.");
+}
 
-console.log(
-"Using backup PKR rate."
-);
+updatePrices();
+}
+
+function updatePrices(){
+
+document.querySelectorAll(".pkr").forEach(function(el){
+
+const usd =
+parseFloat(el.dataset.usd);
+
+const pkr =
+Math.round(usd * usdToPkr);
+
+el.innerText =
+"≈ PKR " + pkr.toLocaleString();
+
+});
 
 }
 
-renderProducts();
+function buyNow(product,usd){
+
+currentProduct = product;
+currentUSD = usd;
+currentPKR = Math.round(usd * usdToPkr);
+
+document.getElementById("selectedProduct").innerText = product;
+
+document.getElementById("selectedPrice").innerText =
+"$" + usd +
+" / ≈ PKR " +
+currentPKR.toLocaleString();
+
+const form =
+document.getElementById("orderForm");
+
+form.style.display = "block";
+
+document.getElementById("successBox").style.display = "none";
+
+form.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
 
 }
 
+function paymentChanged(){
 
-/* ==================================================
-   RENDER PRODUCTS
-================================================== */
+const method =
+document.getElementById("paymentMethod").value;
 
-function renderProducts(){
+document.querySelectorAll(".payment-details")
+.forEach(function(el){
+el.style.display = "none";
+});
 
-const box =
-document.getElementById(
-"productsGrid"
+const message =
+document.getElementById("paymentMessage");
+
+if(method === "Easypaisa"){
+
+document.getElementById("easypaisa").style.display = "block";
+
+message.innerText =
+"Please pay the exact PKR amount to Easypaisa.";
+
+}
+
+else if(method === "JazzCash"){
+
+document.getElementById("jazzcash").style.display = "block";
+
+message.innerText =
+"Please pay the exact PKR amount to JazzCash.";
+
+}
+
+else if(method === "Bank Transfer"){
+
+document.getElementById("bank").style.display = "block";
+
+message.innerText =
+"Bank Transfer is coming soon.";
+
+}
+
+else if(method === "International Payment"){
+
+document.getElementById("international").style.display = "block";
+
+message.innerText =
+"International Payment is coming soon.";
+
+}
+
+}
+
+document.getElementById("orderFormElement")
+.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+const screenshot =
+document.getElementById("paymentScreenshot").files[0];
+
+const order = {
+
+product:currentProduct,
+
+usdPrice:currentUSD,
+
+pkrPrice:currentPKR,
+
+name:document.getElementById("customerName").value,
+
+whatsapp:document.getElementById("customerWhatsApp").value,
+
+email:document.getElementById("customerEmail").value,
+
+payment:document.getElementById("paymentMethod").value,
+
+transaction:document.getElementById("transactionId").value,
+
+instructions:document.getElementById("orderInstructions").value,
+
+screenshotName:screenshot ? screenshot.name : "",
+
+date:new Date().toLocaleString()
+
+};
+
+localStorage.setItem(
+"latestOrder",
+JSON.stringify(order)
 );
 
-const search =
-document.getElementById(
-"search"
-).value
-.toLowerCase();
+document.getElementById("successBox").style.display = "block";
 
-const category =
-document.getElementById(
-"category"
-).value;
+document.getElementById("successBox")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
 
+});
 
-box.innerHTML="";
+exchangeRate();
 
+</script>
 
-const filtered =
-products.filter(
-function(p){
-
-const text =
-(
-p.name +
-" " +
-p.description
-)
-.toLowerCase();
-
-const searchMatch =
-text.includes(search);
-
-const categoryMatch 
+</body>
+   </html>
