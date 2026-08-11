@@ -1,15 +1,52 @@
-if (error) {
-  console.error("Supabase error:", error);
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Supabase Test</title>
+</head>
 
-  container.innerHTML = `
-    <div class="message">
-      <h2>Supabase Error</h2>
-      <p>${error.message}</p>
-      <p><strong>Code:</strong> ${error.code || "N/A"}</p>
-      <p><strong>Details:</strong> ${error.details || "N/A"}</p>
-      <p><strong>Hint:</strong> ${error.hint || "N/A"}</p>
-    </div>
-  `;
+<body>
 
-  return;
+<h1>Supabase Product Test</h1>
+
+<div id="result">Testing...</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL =
+"https://mchewsmjbkexojdaruhj.supabase.co";
+
+const SUPABASE_ANON_KEY =
+"YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+async function test() {
+
+  const result = document.getElementById("result");
+
+  const { data, error } =
+    await db.from("Product").select("*");
+
+  if (error) {
+    result.innerHTML =
+      "<h2>ERROR</h2><pre>" +
+      JSON.stringify(error, null, 2) +
+      "</pre>";
+    return;
+  }
+
+  result.innerHTML =
+    "<h2>SUCCESS</h2><pre>" +
+    JSON.stringify(data, null, 2) +
+    "</pre>";
 }
+
+test();
+</script>
+
+</body>
+</html>
