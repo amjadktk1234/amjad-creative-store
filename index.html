@@ -1,538 +1,241 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Digital Creative Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Creative Store</title>
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{background:linear-gradient(135deg,#111827,#374151);color:white;padding:35px 18px;text-align:center}
-.logo{width:90px;height:90px;margin:auto;border-radius:50%;background:white;color:#111827;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:bold}
-header h1{margin:15px 0 8px;font-size:32px}
-header p{margin:0;color:#d1d5db}
-nav{background:white;padding:15px;text-align:center;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:10}
-nav a{margin:0 10px;text-decoration:none;color:#111827;font-weight:bold}
-.container{max-width:1150px;margin:auto;padding:25px 16px}
-.hero{text-align:center;padding:15px 0 30px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.category{grid-column:1/-1;margin-top:25px}
-.card{background:white;border-radius:18px;padding:15px;border:1px solid #e5e7eb;box-shadow:0 5px 20px #0000000b}
-.product-image{height:170px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:75px;background:linear-gradient(135deg,#eef2ff,#f3f4f6)}
-.card h3{margin:15px 0 8px}
-.card p{color:#6b7280;min-height:40px}
-.price{font-size:24px;font-weight:bold;margin:12px 0 2px}
-.pkr{color:#6b7280;font-size:14px;margin-bottom:14px}
-button{width:100%;border:0;padding:13px;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold;cursor:pointer}
-.form-box{display:none;background:white;padding:25px;border-radius:18px;margin-top:35px;border:1px solid #ddd}
-label{display:block;font-weight:bold;margin-top:15px;margin-bottom:6px}
-input,select,textarea{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font-size:15px}
-textarea{min-height:100px}
-.payment{background:#fff7ed;border:1px solid #fed7aa;padding:18px;border-radius:12px;margin-top:20px}
-.payment-details{display:none;background:white;padding:15px;border-radius:10px;margin-top:12px}
-.notice{background:#eef2ff;padding:15px;border-radius:10px;margin:15px 0}
-.success{display:none;background:#ecfdf5;border:1px solid #a7f3d0;padding:20px;border-radius:15px;margin-top:20px}
-.contact{background:white;padding:25px;border-radius:18px;margin-top:35px;text-align:center}
-.whatsapp{display:inline-block;background:#25D366;color:white;padding:13px 25px;border-radius:10px;text-decoration:none;font-weight:bold}
-footer{text-align:center;padding:30px;color:#6b7280}
-.small{font-size:13px;color:#6b7280}
-.order-summary{background:#f3f4f6;padding:15px;border-radius:10px;margin-bottom:15px}
-</style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #cbd5e1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .category {
+      color: #6366f1;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .buy {
+      display: block;
+      text-align: center;
+      background: #16a34a;
+      color: white;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .loading,
+    .error {
+      text-align: center;
+      padding: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">DCS</div>
-<h1>Digital Creative Store</h1>
-<p>AI Designs • Logos • Profile Pictures • Social Media Graphics</p>
+  <h1>Digital Creative Store</h1>
+  <p>Premium Digital Designs</p>
 </header>
 
-<nav>
-<a href="#products">Products</a>
-<a href="#how">How It Works</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<main class="container">
-
-<section class="hero">
-<h2>Choose Your Design</h2>
-<p>Select a product and place your order directly through our website.</p>
-<p class="small">USD prices are shown with automatic PKR conversion.</p>
-</section>
-
-<section id="products" class="products">
-
-<h2 class="category">🎨 AI Logos</h2>
-
-<div class="card">
-<div class="product-image">🎨</div>
-<h3>Minimal Business Logo</h3>
-<p>Clean professional logo for your business.</p>
-<div class="price">$10</div>
-<div class="pkr" data-usd="10">Calculating...</div>
-<button onclick="buyNow('Minimal Business Logo',10)">Buy Now</button>
+<div class="container">
+  <div id="products" class="products">
+    <div class="loading">Loading products...</div>
+  </div>
 </div>
-
-<div class="card">
-<div class="product-image">👑</div>
-<h3>Luxury Logo</h3>
-<p>Premium elegant logo for brands.</p>
-<div class="price">$15</div>
-<div class="pkr" data-usd="15">Calculating...</div>
-<button onclick="buyNow('Luxury Logo',15)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">💎</div>
-<h3>3D Logo</h3>
-<p>Modern professional 3D logo design.</p>
-<div class="price">$15</div>
-<div class="pkr" data-usd="15">Calculating...</div>
-<button onclick="buyNow('3D Logo',15)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">🎮</div>
-<h3>Gaming Logo</h3>
-<p>Gaming logo for channels and brands.</p>
-<div class="price">$12</div>
-<div class="pkr" data-usd="12">Calculating...</div>
-<button onclick="buyNow('Gaming Logo',12)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">🍔</div>
-<h3>Restaurant Logo</h3>
-<p>Creative logo for food businesses.</p>
-<div class="price">$12</div>
-<div class="pkr" data-usd="12">Calculating...</div>
-<button onclick="buyNow('Restaurant Logo',12)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">▶️</div>
-<h3>YouTube Logo</h3>
-<p>Professional logo for YouTube creators.</p>
-<div class="price">$10</div>
-<div class="pkr" data-usd="10">Calculating...</div>
-<button onclick="buyNow('YouTube Logo',10)">Buy Now</button>
-</div>
-
-<h2 class="category">🖼️ AI Profile Pictures</h2>
-
-<div class="card">
-<div class="product-image">👔</div>
-<h3>Professional Portrait</h3>
-<p>Professional AI profile portrait.</p>
-<div class="price">$5</div>
-<div class="pkr" data-usd="5">Calculating...</div>
-<button onclick="buyNow('Professional Portrait',5)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">💼</div>
-<h3>Business Card Design</h3>
-<p>Professional business card design for your company.</p>
-<div class="price">$5</div>
-<div class="pkr" data-usd="5">Calculating...</div>
-<button onclick="buyNow('Business Card Design',5)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">🤖</div>
-<h3>3D Avatar</h3>
-<p>Modern AI 3D social media avatar.</p>
-<div class="price">$8</div>
-<div class="pkr" data-usd="8">Calculating...</div>
-<button onclick="buyNow('3D Avatar',8)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">🎭</div>
-<h3>Cartoon Avatar</h3>
-<p>Creative cartoon-style profile picture.</p>
-<div class="price">$6</div>
-<div class="pkr" data-usd="6">Calculating...</div>
-<button onclick="buyNow('Cartoon Avatar',6)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">🎮</div>
-<h3>Gaming Avatar</h3>
-<p>Gaming profile picture.</p>
-<div class="price">$8</div>
-<div class="pkr" data-usd="8">Calculating...</div>
-<button onclick="buyNow('Gaming Avatar',8)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">📸</div>
-<h3>Social Media DP</h3>
-<p>Stylish social media display picture.</p>
-<div class="price">$5</div>
-<div class="pkr" data-usd="5">Calculating...</div>
-<button onclick="buyNow('Social Media DP',5)">Buy Now</button>
-</div>
-
-<h2 class="category">📱 Social Media Designs</h2>
-
-<div class="card">
-<div class="product-image">📘</div>
-<h3>Facebook Poster</h3>
-<p>Promotional Facebook design.</p>
-<div class="price">$5</div>
-<div class="pkr" data-usd="5">Calculating...</div>
-<button onclick="buyNow('Facebook Poster',5)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">📷</div>
-<h3>Instagram Post</h3>
-<p>Professional Instagram design.</p>
-<div class="price">$5</div>
-<div class="pkr" data-usd="5">Calculating...</div>
-<button onclick="buyNow('Instagram Post',5)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">💬</div>
-<h3>WhatsApp Promotion</h3>
-<p>WhatsApp promotional graphic.</p>
-<div class="price">$5</div>
-<div class="pkr" data-usd="5">Calculating...</div>
-<button onclick="buyNow('WhatsApp Promotion',5)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">▶️</div>
-<h3>YouTube Thumbnail</h3>
-<p>Click-worthy YouTube thumbnail.</p>
-<div class="price">$6</div>
-<div class="pkr" data-usd="6">Calculating...</div>
-<button onclick="buyNow('YouTube Thumbnail',6)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">📢</div>
-<h3>Business Advertisement</h3>
-<p>Professional business advertisement.</p>
-<div class="price">$8</div>
-<div class="pkr" data-usd="8">Calculating...</div>
-<button onclick="buyNow('Business Advertisement',8)">Buy Now</button>
-</div>
-
-<div class="card">
-<div class="product-image">🔥</div>
-<h3>Sale Discount Poster</h3>
-<p>Eye-catching sale promotion.</p>
-<div class="price">$7</div>
-<div class="pkr" data-usd="7">Calculating...</div>
-<button onclick="buyNow('Sale Discount Poster',7)">Buy Now</button>
-</div>
-
-</section>
-
-<section id="orderForm" class="form-box">
-
-<h2>🛒 Complete Your Order</h2>
-
-<div class="order-summary">
-<strong>Selected Product:</strong>
-<div id="selectedProduct"></div>
-<strong>Price:</strong>
-<div id="selectedPrice"></div>
-</div>
-
-<form id="orderFormElement">
-
-<label>Your Name</label>
-<input type="text" id="customerName" placeholder="Enter your full name" required>
-
-<label>WhatsApp Number</label>
-<input type="tel" id="customerWhatsApp" placeholder="+92XXXXXXXXXX" required>
-
-<label>Email Address</label>
-<input type="email" id="customerEmail" placeholder="your@email.com">
-
-<label>Payment Method</label>
-
-<select id="paymentMethod" onchange="paymentChanged()" required>
-<option value="">Select Payment Method</option>
-<option value="Easypaisa">Easypaisa</option>
-<option value="JazzCash">JazzCash</option>
-<option value="Bank Transfer">Bank Transfer — Coming Soon</option>
-<option value="International Payment">International Payment — Coming Soon</option>
-</select>
-
-<div class="payment">
-
-<strong>Payment Information</strong>
-
-<p id="paymentMessage">Select a payment method.</p>
-
-<div id="easypaisa" class="payment-details">
-<strong>Easypaisa</strong>
-<p>Account Name: Amjad Khan</p>
-<p>Account Number: 03438038809</p>
-<p class="small">Pay the exact PKR amount shown above.</p>
-</div>
-
-<div id="jazzcash" class="payment-details">
-<strong>JazzCash</strong>
-<p>Account Name: Amjad Khan</p>
-<p>Account Number: 03419575908</p>
-<p class="small">Pay the exact PKR amount shown above.</p>
-</div>
-
-<div id="bank" class="payment-details">
-<strong>Bank Transfer</strong>
-<p>Coming Soon</p>
-</div>
-
-<div id="international" class="payment-details">
-<strong>International Payment</strong>
-<p>Coming Soon</p>
-</div>
-
-</div>
-
-<label>Transaction ID / Reference</label>
-<input type="text" id="transactionId" placeholder="Enter transaction ID" required>
-
-<label>Payment Screenshot</label>
-<input type="file" id="paymentScreenshot" accept="image/*" required>
-
-<label>Order Instructions</label>
-<textarea id="orderInstructions" placeholder="Tell us exactly what you want..."></textarea>
-
-<div class="notice">
-<strong>Important:</strong>
-Your order will be processed after payment is verified.
-</div>
-
-<button type="submit">✅ Submit Order</button>
-
-</form>
-
-<div id="successBox" class="success">
-<h3>✅ Order Submitted</h3>
-<p>Your order details have been prepared successfully.</p>
-<p class="small">Please keep your transaction ID and payment screenshot safely.</p>
-</div>
-
-</section>
-
-<section id="how" class="contact">
-
-<h2>How It Works</h2>
-
-<p>1️⃣ Select your product</p>
-<p>2️⃣ Click Buy Now</p>
-<p>3️⃣ Enter your details</p>
-<p>4️⃣ Select Easypaisa or JazzCash</p>
-<p>5️⃣ Make payment</p>
-<p>6️⃣ Enter transaction ID</p>
-<p>7️⃣ Upload payment screenshot</p>
-<p>8️⃣ Submit your order</p>
-
-</section>
-
-<section id="contact" class="contact">
-
-<h2>📞 Contact Us</h2>
-
-<p>Need help? Contact us directly on WhatsApp.</p>
-
-<a class="whatsapp" href="https://wa.me/923438038809" target="_blank">
-WhatsApp Direct Contact
-</a>
-
-</section>
-
-</main>
-
-<footer>
-© 2026 Digital Creative Store
-</footer>
 
 <script>
-
-let usdToPkr = 278;
-let currentProduct = "";
-let currentUSD = 0;
-let currentPKR = 0;
-
-async function exchangeRate(){
-
-try{
-
-const response =
-await fetch("https://open.er-api.com/v6/latest/USD");
-
-const data =
-await response.json();
-
-if(data.rates && data.rates.PKR){
-usdToPkr = data.rates.PKR;
-}
-
-}catch(error){
-console.log("Using backup PKR rate.");
-}
-
-updatePrices();
-}
-
-function updatePrices(){
-
-document.querySelectorAll(".pkr").forEach(function(el){
-
-const usd =
-parseFloat(el.dataset.usd);
-
-const pkr =
-Math.round(usd * usdToPkr);
-
-el.innerText =
-"≈ PKR " + pkr.toLocaleString();
-
-});
-
-}
-
-function buyNow(product,usd){
-
-currentProduct = product;
-currentUSD = usd;
-currentPKR = Math.round(usd * usdToPkr);
-
-document.getElementById("selectedProduct").innerText = product;
-
-document.getElementById("selectedPrice").innerText =
-"$" + usd +
-" / ≈ PKR " +
-currentPKR.toLocaleString();
-
-const form =
-document.getElementById("orderForm");
-
-form.style.display = "block";
-
-document.getElementById("successBox").style.display = "none";
-
-form.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-}
-
-function paymentChanged(){
-
-const method =
-document.getElementById("paymentMethod").value;
-
-document.querySelectorAll(".payment-details")
-.forEach(function(el){
-el.style.display = "none";
-});
-
-const message =
-document.getElementById("paymentMessage");
-
-if(method === "Easypaisa"){
-
-document.getElementById("easypaisa").style.display = "block";
-
-message.innerText =
-"Please pay the exact PKR amount to Easypaisa.";
-
-}
-
-else if(method === "JazzCash"){
-
-document.getElementById("jazzcash").style.display = "block";
-
-message.innerText =
-"Please pay the exact PKR amount to JazzCash.";
-
-}
-
-else if(method === "Bank Transfer"){
-
-document.getElementById("bank").style.display = "block";
-
-message.innerText =
-"Bank Transfer is coming soon.";
-
-}
-
-else if(method === "International Payment"){
-
-document.getElementById("international").style.display = "block";
-
-message.innerText =
-"International Payment is coming soon.";
-
-}
-
-}
-
-document.getElementById("orderFormElement")
-.addEventListener("submit",function(event){
-
-event.preventDefault();
-
-const screenshot =
-document.getElementById("paymentScreenshot").files[0];
-
-const order = {
-
-product:currentProduct,
-
-usdPrice:currentUSD,
-
-pkrPrice:currentPKR,
-
-name:document.getElementById("customerName").value,
-
-whatsapp:document.getElementById("customerWhatsApp").value,
-
-email:document.getElementById("customerEmail").value,
-
-payment:document.getElementById("paymentMethod").value,
-
-transaction:document.getElementById("transactionId").value,
-
-instructions:document.getElementById("orderInstructions").value,
-
-screenshotName:screenshot ? screenshot.name : "",
-
-date:new Date().toLocaleString()
-
-};
-
-localStorage.setItem(
-"latestOrder",
-JSON.stringify(order)
-);
-
-document.getElementById("successBox").style.display = "block";
-
-document.getElementById("successBox")
-.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-});
-
-exchangeRate();
-
+  const SUPABASE_URL =
+    "https://mchewsmjbkexojdaruhj.supabase.co";
+
+  const SUPABASE_ANON_KEY =
+    "PASTE_YOUR_SUPABASE_ANON_KEY_HERE";
+
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+
+  async function loadProducts() {
+
+    const container = document.getElementById("products");
+
+    const { data, error } = await supabaseClient
+      .from("Product")
+      .select("*")
+      .order("id", { ascending: false });
+
+    if (error) {
+      console.error(error);
+
+      container.innerHTML = `
+        <div class="error">
+          <h2>Products could not be loaded</h2>
+          <p>${error.message}</p>
+        </div>
+      `;
+
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      container.innerHTML = `
+        <div class="loading">
+          <h2>No products yet</h2>
+          <p>Add a product from Supabase Table Editor.</p>
+        </div>
+      `;
+
+      return;
+    }
+
+    container.innerHTML = "";
+
+    data.forEach(product => {
+
+      const image = product.image_url
+        ? product.image_url
+        : "https://via.placeholder.com/600x400?text=No+Image";
+
+      const whatsappNumber = product.whatsapp || "";
+
+      const message =
+        "Hello, I want to buy: " +
+        (product.name || "Product");
+
+      const whatsappLink = whatsappNumber
+        ? "https://wa.me/" +
+          whatsappNumber.replace(/\D/g, "") +
+          "?text=" +
+          encodeURIComponent(message)
+        : "#";
+
+      container.innerHTML += `
+        <div class="card">
+
+          <img
+            src="${image}"
+            alt="${product.name || "Product"}"
+          >
+
+          <div class="card-content">
+
+            <h2>
+              ${product.name || "Unnamed Product"}
+            </h2>
+
+            <div class="category">
+              ${product.category || ""}
+            </div>
+
+            <div class="description">
+              ${product.description || ""}
+            </div>
+
+            <div class="price">
+              Rs. ${product.price || "0"}
+            </div>
+
+            ${
+              whatsappNumber
+              ? `<a class="buy"
+                   href="${whatsappLink}"
+                   target="_blank">
+                   Buy on WhatsApp
+                 </a>`
+              : `<a class="buy"
+                   href="#"
+                   onclick="return false;">
+                   WhatsApp Coming Soon
+                 </a>`
+            }
+
+          </div>
+
+        </div>
+      `;
+    });
+  }
+
+  loadProducts();
 </script>
 
 </body>
-   </html>
+</html>
