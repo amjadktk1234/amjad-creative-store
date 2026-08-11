@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amjad Creative Studio</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f7fb;color:#171717}
+header{background:#111827;color:#fff;padding:28px 18px;text-align:center}
+header h1{margin:0 0 8px;font-size:32px} header p{margin:0;color:#d1d5db}
+nav{padding:14px;text-align:center;background:#fff;border-bottom:1px solid #e5e7eb}
+nav a{margin:0 12px;color:#111827;text-decoration:none;font-weight:600}
+.container{max-width:1000px;margin:auto;padding:28px 18px}
+.hero{text-align:center;padding:25px 0 15px}.hero h2{font-size:28px;margin-bottom:8px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 5px 20px #0000000a}
+.icon{font-size:42px}.card h3{margin:12px 0 8px}.price{font-size:24px;font-weight:700;margin:14px 0}
+button{width:100%;border:0;border-radius:10px;padding:12px;background:#111827;color:#fff;font-size:16px;cursor:pointer}
+.info{background:#fff;border-radius:16px;padding:22px;margin-top:24px;border:1px solid #e5e7eb}
+footer{text-align:center;padding:28px;color:#6b7280}
+.small{font-size:13px;color:#6b7280}
+</style>
+</head>
+<body>
+<header>
+<h1>Amjad Creative Studio</h1>
+<p>AI Designs • Logos • Profile Pictures • Social Media Graphics</p>
+</header>
+
+<nav>
+<a href="#products">Products</a>
+<a href="#how">How It Works</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<main class="container">
+<section class="hero">
+<h2>Simple, Custom Digital Designs</h2>
+<p>Choose a service, place your order, and receive your finished design digitally.</p>
+</section>
+
+<section id="products" class="products">
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Custom AI Logo</h3>
+<p>Professional custom logo concept for a business, page or brand.</p>
+<div class="price">$10</div>
+<button onclick="order('Custom AI Logo','$10')">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="icon">🖼️</div>
+<h3>AI Profile Picture</h3>
+<p>Custom AI-style profile picture made from your photo and instructions.</p>
+<div class="price">$5</div>
+<button onclick="order('AI Profile Picture','$5')">Buy Now</button>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Social Media Poster</h3>
+<p>Simple promotional graphic for Facebook, Instagram or WhatsApp.</p>
+<div class="price">$5</div>
+<button onclick="order('Social Media Poster','$5')">Buy Now</button>
+</div>
+</section>
+
+<section id="how" class="info">
+<h3>How It Works</h3>
+<ol>
+<li>Select a design.</li>
+<li>Choose the payment method shown at checkout.</li>
+<li>Send the required order details.</li>
+<li>After payment is verified, your digital order is prepared and delivered.</li>
+</ol>
+<p class="small">Payment methods and automatic delivery will be connected after we verify which methods are actually available for Pakistan.</p>
+</section>
+
+<section id="contact" class="info">
+<h3>Contact</h3>
+<p>For questions about an order, contact the store owner.</p>
+<p class="small">We will add the final WhatsApp/email/contact details later.</p>
+</section>
+</main>
+
+<footer>© 2026 Amjad Creative Studio • Digital Design Services</footer>
+
+<script>
+function order(product, price){
+  const msg = `I want to order ${product} (${price}). Please send me the payment and order instructions.`;
+  const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+  window.open(url,'_blank');
+}
+</script>
+</body>
+</html>
