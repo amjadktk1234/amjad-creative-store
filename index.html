@@ -1,387 +1,1208 @@
 <!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Digital Creative Studio</title>
 
+<meta name="description"
+content="Digital Creative Studio - AI Logos, Profile Pictures and Social Media Designs">
+
+<meta name="theme-color" content="#111827">
+
+<!-- Website/App Logo -->
+<link rel="icon"
+href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<rect width='100' height='100' rx='22' fill='%23111827'/>
+<text x='50' y='70' text-anchor='middle'
+font-size='62' font-family='Arial' fill='%23facc15'>D</text>
+</svg>">
+
 <style>
-*{box-sizing:border-box}
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f7f7fb;
-  color:#171717
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f7fb;
+color:#171717;
 }
+
+a{
+text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+font-family:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-  background:linear-gradient(135deg,#111827,#312e81);
-  color:white;
-  padding:34px 18px;
-  text-align:center
+background:linear-gradient(135deg,#070d1d,#111827,#312e81);
+color:white;
+padding:22px 18px;
 }
-header h1{margin:0 0 8px;font-size:32px}
-header p{margin:0;color:#d1d5db}
+
+.header-inner{
+max-width:1150px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+width:58px;
+height:58px;
+border-radius:16px;
+background:#111827;
+border:2px solid #facc15;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:36px;
+font-weight:bold;
+color:#facc15;
+box-shadow:0 5px 20px #0005;
+}
+
+.brand-text h1{
+margin:0;
+font-size:25px;
+}
+
+.brand-text p{
+margin:5px 0 0;
+color:#d1d5db;
+font-size:13px;
+}
+
+.header-download{
+background:#facc15;
+color:#111827;
+padding:12px 18px;
+border-radius:10px;
+font-weight:700;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
-  padding:14px;
-  text-align:center;
-  background:white;
-  border-bottom:1px solid #e5e7eb;
-  position:sticky;
-  top:0;
-  z-index:20
+background:white;
+border-bottom:1px solid #e5e7eb;
+position:sticky;
+top:0;
+z-index:50;
 }
+
+.nav-inner{
+max-width:1150px;
+margin:auto;
+padding:13px 16px;
+display:flex;
+justify-content:center;
+gap:25px;
+}
+
 nav a{
-  margin:0 10px;
-  color:#111827;
-  text-decoration:none;
-  font-weight:600
+color:#111827;
+font-weight:600;
 }
-.container{max-width:1150px;margin:auto;padding:25px 16px}
-.hero{text-align:center;padding:20px 0 10px}
-.hero h2{font-size:28px;margin-bottom:8px}
-.small{font-size:13px;color:#6b7280}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+background:linear-gradient(135deg,#0b1020,#171f3b);
+color:white;
+padding:55px 18px;
+}
+
+.hero-inner{
+max-width:1150px;
+margin:auto;
+display:grid;
+grid-template-columns:1.4fr 1fr;
+align-items:center;
+gap:30px;
+}
+
+.hero h2{
+font-size:48px;
+margin:0 0 15px;
+}
+
+.hero h2 span{
+color:#facc15;
+}
+
+.hero p{
+font-size:18px;
+color:#d1d5db;
+line-height:1.6;
+}
+
+.hero-buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.primary-btn,
+.secondary-btn{
+padding:14px 22px;
+border-radius:11px;
+font-weight:700;
+display:inline-block;
+}
+
+.primary-btn{
+background:#facc15;
+color:#111827;
+}
+
+.secondary-btn{
+border:1px solid #fff;
+color:white;
+}
+
+.hero-logo{
+width:230px;
+height:230px;
+border-radius:45px;
+margin:auto;
+background:#111827;
+border:4px solid #facc15;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:130px;
+font-weight:bold;
+color:#facc15;
+box-shadow:0 15px 50px #0008;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:25px 16px;
+}
+
+.section-title{
+text-align:center;
+margin:15px 0 25px;
+}
+
+.section-title h2{
+font-size:30px;
+margin:0 0 8px;
+}
+
+.small{
+font-size:13px;
+color:#6b7280;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
 
 .controls{
-  background:white;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  padding:16px;
-  margin:20px 0;
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:12px
+background:white;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:15px;
+margin-bottom:25px;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:10px;
 }
-input,select,textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #d1d5db;
-  border-radius:9px;
-  font-size:15px
+
+.controls input,
+.controls select{
+padding:14px;
+border:1px solid #d1d5db;
+border-radius:10px;
+font-size:15px;
 }
-textarea{min-height:90px}
+
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(235px,1fr));
+gap:18px;
 }
-.category-title{
-  grid-column:1/-1;
-  margin:28px 0 0
-}
-.card{
-  background:white;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  padding:16px;
-  box-shadow:0 5px 20px #0000000a;
-  overflow:hidden
-}
-.product-image{
-  width:100%;
-  height:190px;
-  object-fit:cover;
-  border-radius:12px;
-  background:#eef2ff
-}
-.icon{
-  font-size:55px;
-  height:190px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#eef2ff;
-  border-radius:12px
-}
-.card h3{margin:12px 0 8px}
-.card p{color:#555;min-height:40px}
-.price{
-  font-size:23px;
-  font-weight:700;
-  margin:12px 0 4px
-}
-.price-pkr{
-  font-size:14px;
-  color:#6b7280;
-  margin-bottom:14px
-}
-button{
-  width:100%;
-  border:0;
-  border-radius:10px;
-  padding:12px;
-  background:#111827;
-  color:white;
-  font-size:16px;
-  cursor:pointer
-}
-button:hover{opacity:.9}
-.secondary{background:#4f46e5}
-.danger{background:#dc2626}
-.green{background:#15803d}
 
-.info,.form-box,.admin-box{
-  background:white;
-  border-radius:16px;
-  padding:22px;
-  margin-top:24px;
-  border:1px solid #e5e7eb
+.category-title{
+grid-column:1/-1;
+margin:20px 0 0;
+font-size:22px;
 }
-.form-box{display:none}
+
+.card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:17px;
+padding:15px;
+box-shadow:0 5px 20px #0000000a;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px #0002;
+}
+
+.product-image{
+width:100%;
+height:175px;
+object-fit:cover;
+border-radius:12px;
+background:#eef2ff;
+}
+
+.icon{
+height:175px;
+border-radius:12px;
+background:
+linear-gradient(135deg,#eef2ff,#e0e7ff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+}
+
+.card h3{
+margin:13px 0 7px;
+}
+
+.card p{
+color:#555;
+min-height:40px;
+line-height:1.45;
+}
+
+.price{
+font-size:23px;
+font-weight:800;
+}
+
+.price-pkr{
+font-size:14px;
+color:#6b7280;
+margin:5px 0 14px;
+}
+
+.buy-btn{
+width:100%;
+border:0;
+border-radius:10px;
+padding:13px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+.buy-btn:hover{
+background:#312e81;
+}
+
+
+/* =========================
+   ORDER FORM
+========================= */
+
+.form-box,
+.info,
+.admin{
+background:white;
+border-radius:17px;
+padding:22px;
+margin-top:25px;
+border:1px solid #e5e7eb;
+}
+
+.form-box{
+display:none;
+}
 
 label{
-  display:block;
-  font-weight:600;
-  margin-top:14px;
-  margin-bottom:6px
+display:block;
+font-weight:700;
+margin-top:14px;
+margin-bottom:6px;
 }
-.payment-box{
-  background:#fff7ed;
-  border:1px solid #fed7aa;
-  padding:15px;
-  border-radius:10px;
-  margin-top:15px
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font-size:15px;
 }
-.payment-details{
-  display:none;
-  margin-top:12px;
-  padding:12px;
-  background:white;
-  border-radius:8px
+
+textarea{
+min-height:100px;
+resize:vertical;
 }
+
 .notice{
-  background:#f3f4f6;
-  padding:14px;
-  border-radius:10px;
-  margin:15px 0;
-  font-size:14px
+background:#f3f4f6;
+padding:14px;
+border-radius:10px;
+margin:15px 0;
+font-size:14px;
 }
+
+.submit-btn{
+width:100%;
+margin-top:20px;
+padding:14px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+}
+
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment-box{
+background:#fff7ed;
+border:1px solid #fed7aa;
+padding:15px;
+border-radius:12px;
+margin-top:15px;
+}
+
+.payment-details{
+display:none;
+margin-top:12px;
+padding:14px;
+background:white;
+border-radius:10px;
+border:1px solid #eee;
+}
+
+.payment-details strong{
+font-size:17px;
+}
+
+
+/* =========================
+   DOWNLOAD APP
+========================= */
+
+.app-download{
+background:linear-gradient(135deg,#111827,#312e81);
+color:white;
+border-radius:18px;
+padding:25px;
+margin-top:25px;
+display:grid;
+grid-template-columns:1fr auto;
+align-items:center;
+gap:20px;
+}
+
+.app-download h2{
+margin-top:0;
+}
+
+.app-logo-small{
+width:90px;
+height:90px;
+border-radius:22px;
+background:#111827;
+border:3px solid #facc15;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:55px;
+font-weight:bold;
+color:#facc15;
+}
+
+.download-btn{
+display:inline-block;
+background:#facc15;
+color:#111827;
+padding:14px 22px;
+border-radius:11px;
+font-weight:800;
+margin-top:10px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:15px
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:15px;
 }
+
 .contact-buttons a{
-  display:block;
-  text-align:center;
-  padding:12px;
-  border-radius:10px;
-  text-decoration:none;
-  background:#111827;
-  color:white
+display:block;
+text-align:center;
+padding:13px;
+border-radius:10px;
+background:#111827;
+color:white;
+font-weight:700;
 }
-footer{text-align:center;padding:28px;color:#6b7280}
 
-.admin-toggle{
-  margin-top:12px;
-  background:#374151;
-  font-size:13px;
-  width:auto;
-  padding:8px 15px
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin{
+margin-bottom:25px;
 }
-.admin-box{display:none}
-.admin-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px
+
+.admin button{
+width:100%;
+border:0;
+border-radius:10px;
+padding:13px;
+background:#111827;
+color:white;
+font-weight:700;
+margin-top:10px;
+cursor:pointer;
 }
-.admin-products{
-  margin-top:20px;
-  display:grid;
-  gap:10px
+
+.admin-list{
+margin-top:15px;
 }
+
 .admin-item{
-  border:1px solid #ddd;
-  padding:12px;
-  border-radius:10px;
-  display:flex;
-  gap:12px;
-  align-items:center
+padding:11px;
+border:1px solid #ddd;
+border-radius:9px;
+margin-top:8px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
 }
-.admin-item img{
-  width:65px;
-  height:65px;
-  object-fit:cover;
-  border-radius:8px
-}
-.admin-actions{
-  margin-left:auto;
-  display:flex;
-  gap:7px
-}
-.admin-actions button{
-  width:auto;
-  padding:8px 10px;
-  font-size:13px
-}
-.hidden{display:none!important}
 
-@media(max-width:650px){
-  .controls,.admin-grid{grid-template-columns:1fr}
-  nav a{display:inline-block;margin:6px}
+.delete{
+background:#dc2626!important;
+width:auto!important;
+padding:8px 12px!important;
 }
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:#0b1020;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:30px;
+}
+
+.footer-inner{
+max-width:1150px;
+margin:auto;
+text-align:center;
+}
+
+.footer-logo{
+font-size:22px;
+font-weight:800;
+color:white;
+}
+
+.footer-logo span{
+color:#facc15;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+.header-inner{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-inner{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h2{
+font-size:36px;
+}
+
+.hero-logo{
+width:170px;
+height:170px;
+font-size:90px;
+}
+
+.controls{
+grid-template-columns:1fr;
+}
+
+.app-download{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.app-logo-small{
+margin:auto;
+}
+
+.contact-buttons{
+grid-template-columns:1fr;
+}
+
+.nav-inner{
+gap:12px;
+flex-wrap:wrap;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
+<div class="header-inner">
+
+<div class="brand">
+
+<div class="logo">
+D
+</div>
+
+<div class="brand-text">
+
 <h1>Digital Creative Studio</h1>
-<p>AI Designs • Logos • Profile Pictures • Social Media Graphics</p>
-<button class="admin-toggle" onclick="toggleAdmin()">Admin Panel</button>
+
+<p>
+AI Designs • Logos • Profile Pictures • Social Media Graphics
+</p>
+
+</div>
+
+</div>
+
+
+<a
+href="DigitalCreativeStudio.apk"
+download
+class="header-download">
+
+📱 Download App
+
+</a>
+
+</div>
+
 </header>
 
+
+<!-- =========================
+     NAV
+========================= -->
+
 <nav>
+
+<div class="nav-inner">
+
+<a href="#home">Home</a>
 <a href="#products">Products</a>
 <a href="#how">How It Works</a>
 <a href="#contact">Contact</a>
+
+</div>
+
 </nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="home" class="hero">
+
+<div class="hero-inner">
+
+<div>
+
+<h2>
+Digital Creative
+<span>Studio</span>
+</h2>
+
+<p>
+AI Designs • Logos • Profile Pictures • Social Media Graphics
+</p>
+
+<p>
+خوابوں کو خوبصورت Digital Art میں بدلیں۔
+اپنی پسند کا design منتخب کریں اور online order کریں۔
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="#products"
+class="primary-btn">
+
+🛒 Browse Products
+
+</a>
+
+
+<a
+href="DigitalCreativeStudio.apk"
+download
+class="secondary-btn">
+
+📱 Download Android App
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-logo">
+
+D
+
+</div>
+
+</div>
+
+</section>
+
 
 <main class="container">
 
-<section class="hero">
-<h2>Choose Your Design</h2>
-<p>Select your preferred product and place your order.</p>
-<p class="small">USD prices are shown with automatic PKR conversion.</p>
-</section>
 
-<section class="controls">
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products">
+
+<div class="section-title">
+
+<h2>🔥 Our Creative Products</h2>
+
+<p>
+Choose your favorite design and place your order.
+</p>
+
+</div>
+
+
+<div class="controls">
+
 <input
-  type="search"
-  id="search"
-  placeholder="Search products..."
-  oninput="renderProducts()">
+type="search"
+id="search"
+placeholder="🔎 Search for designs..."
+oninput="renderProducts()">
 
-<select id="categoryFilter" onchange="renderProducts()">
-<option value="All">All Categories</option>
-<option value="AI Logos">AI Logos</option>
-<option value="AI Profile Pictures">AI Profile Pictures</option>
-<option value="Social Media Designs">Social Media Designs</option>
-<option value="Business Graphics">Business Graphics</option>
+
+<select
+id="category"
+onchange="renderProducts()">
+
+<option value="All">
+All Categories
+</option>
+
+<option value="AI Logos">
+AI Logos
+</option>
+
+<option value="AI Profile Pictures">
+Profile Pictures
+</option>
+
+<option value="Social Media Designs">
+Social Media Designs
+</option>
+
+<option value="Business Graphics">
+Business Graphics
+</option>
+
 </select>
+
+</div>
+
+
+<div
+id="productsGrid"
+class="products">
+</div>
+
 </section>
 
-<section id="products" class="products"></section>
 
-<section id="orderForm" class="form-box">
+<!-- =========================
+     ORDER FORM
+========================= -->
 
-<h3>Place Your Order</h3>
+<section
+id="orderForm"
+class="form-box">
+
+<h2>🛒 Place Your Order</h2>
+
 
 <div class="notice">
+
 <strong>Payment Verification:</strong>
-Your order will be processed only after payment is verified in our account.
+
+Your order will be processed only after
+payment is verified in our account.
+
 </div>
+
 
 <form id="orderFormElement">
 
-<label>Selected Product</label>
-<input type="text" id="product" readonly>
 
-<label>Price</label>
-<input type="text" id="price" readonly>
+<label>
+Selected Product
+</label>
 
-<label>Your Name</label>
-<input type="text" id="name" placeholder="Enter your full name" required>
+<input
+type="text"
+id="product"
+readonly>
 
-<label>WhatsApp Number</label>
-<input type="tel" id="whatsapp" placeholder="+92XXXXXXXXXX" required>
 
-<label>Email</label>
-<input type="email" id="email" placeholder="your@email.com">
+<label>
+Price
+</label>
 
-<label>Payment Method</label>
+<input
+type="text"
+id="price"
+readonly>
 
-<select id="payment" required onchange="showPaymentDetails()">
-<option value="">Select payment method</option>
-<option value="Easypaisa">Easypaisa</option>
-<option value="JazzCash">JazzCash</option>
-<option value="Bank Transfer">Bank Transfer</option>
-<option value="International Payment">International Payment</option>
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your full name"
+required>
+
+
+<label>
+WhatsApp Number
+</label>
+
+<input
+type="tel"
+id="whatsapp"
+placeholder="+92XXXXXXXXXX"
+required>
+
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="your@email.com">
+
+
+<label>
+Payment Method
+</label>
+
+<select
+id="payment"
+required
+onchange="showPaymentDetails()">
+
+<option value="">
+Select payment method
+</option>
+
+<option value="Easypaisa">
+Easypaisa
+</option>
+
+<option value="JazzCash">
+JazzCash
+</option>
+
+<option value="Bank Transfer">
+Bank Transfer
+</option>
+
+<option value="International Payment">
+International Payment
+</option>
+
 </select>
+
 
 <div class="payment-box">
 
-<strong>Payment Instructions</strong>
+<strong>
+💳 Payment Instructions
+</strong>
 
 <p id="paymentMessage">
 Please select a payment method above.
 </p>
 
-<div id="easypaisa" class="payment-details">
-<strong>Easypaisa</strong>
-<p>Account Name: Amjad Khan</p>
-<p>Account Number: 03438038809</p>
-</div>
 
-<div id="jazzcash" class="payment-details">
-<strong>JazzCash</strong>
-<p>Account Name: Amjad Khan</p>
-<p>Account Number: 03419575908</p>
-</div>
+<div
+id="easypaisa"
+class="payment-details">
 
-<div id="bank" class="payment-details">
-<strong>Bank Transfer</strong>
-<p>Coming Soon</p>
-</div>
+<strong>
+Easypaisa
+</strong>
 
-<div id="international" class="payment-details">
-<strong>International Payment</strong>
-<p>Coming Soon</p>
-</div>
+<p>
+Account Name: Amjad Khan
+</p>
+
+<p>
+Account Number: 03438038809
+</p>
 
 </div>
 
-<label>Transaction ID / Reference</label>
-<input type="text" id="transaction" placeholder="Enter transaction ID" required>
 
-<label>Payment Screenshot</label>
-<input type="file" id="screenshot" accept="image/*" required>
+<div
+id="jazzcash"
+class="payment-details">
 
-<label>Order Instructions</label>
-<textarea id="instructions"
-placeholder="Tell us what you want in your design..."></textarea>
+<strong>
+JazzCash
+</strong>
 
-<button type="submit">Submit Order on WhatsApp</button>
+<p>
+Account Name: Amjad Khan
+</p>
+
+<p>
+Account Number: 03419575908
+</p>
+
+</div>
+
+
+<div
+id="bank"
+class="payment-details">
+
+<strong>
+Bank Transfer
+</strong>
+
+<p>
+Coming Soon
+</p>
+
+</div>
+
+
+<div
+id="international"
+class="payment-details">
+
+<strong>
+International Payment
+</strong>
+
+<p>
+Coming Soon
+</p>
+
+</div>
+
+</div>
+
+
+<label>
+Transaction ID / Reference
+</label>
+
+<input
+type="text"
+id="transaction"
+placeholder="Enter transaction ID"
+required>
+
+
+<label>
+Payment Screenshot
+</label>
+
+<input
+type="file"
+id="screenshot"
+accept="image/*"
+required>
+
+
+<label>
+Order Instructions
+</label>
+
+<textarea
+id="instructions"
+placeholder="Tell us what you want in your design...">
+</textarea>
+
+
+<button
+type="submit"
+class="submit-btn">
+
+📱 Submit Order on WhatsApp
+
+</button>
 
 </form>
+
 </section>
 
 
-<section id="how" class="info">
-<h3>How It Works</h3>
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section
+id="how"
+class="info">
+
+<h2>
+⚙️ How It Works
+</h2>
+
 <ol>
-<li>Select your preferred design.</li>
-<li>Fill in your order details.</li>
-<li>Select Easypaisa or JazzCash.</li>
-<li>Make the payment.</li>
-<li>Enter your transaction ID.</li>
-<li>Keep your payment screenshot.</li>
-<li>Submit the order through WhatsApp.</li>
-<li>Payment is manually verified.</li>
-<li>Your digital design is prepared and delivered.</li>
+
+<li>
+Choose your preferred product.
+</li>
+
+<li>
+Click Buy Now.
+</li>
+
+<li>
+Enter your customer details.
+</li>
+
+<li>
+Select Easypaisa or JazzCash.
+</li>
+
+<li>
+Make the payment.
+</li>
+
+<li>
+Enter Transaction ID.
+</li>
+
+<li>
+Upload payment screenshot.
+</li>
+
+<li>
+Submit the order.
+</li>
+
+<li>
+Order details open in WhatsApp.
+</li>
+
+<li>
+Payment is manually verified.
+</li>
+
+<li>
+Your digital design is prepared and delivered.
+</li>
+
 </ol>
 
 <p class="small">
-A screenshot alone does not confirm payment. Payment must be verified in the account.
+
+A screenshot alone does not confirm payment.
+Payment must be verified in the account.
+
 </p>
+
 </section>
 
 
-<section id="contact" class="info">
+<!-- =========================
+     APP DOWNLOAD
+========================= -->
 
-<h3>Contact Us</h3>
+<section class="app-download">
 
-<p>You can contact us through WhatsApp or Email.</p>
+<div>
+
+<h2>
+📱 Digital Creative Studio Android App
+</h2>
+
+<p>
+ہماری Android App اپنے موبائل میں install کریں
+اور Digital Creative Studio آسانی سے استعمال کریں۔
+</p>
+
+<p>
+App میں Products، Buy Now، Orders اور Contact
+کا آسان access ہوگا۔
+</p>
+
+<a
+href="DigitalCreativeStudio.apk"
+download
+class="download-btn">
+
+🤖 Download APK
+
+</a>
+
+</div>
+
+
+<div class="app-logo-small">
+
+D
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DIRECT CONTACT
+========================= -->
+
+<section
+id="contact"
+class="info">
+
+<h2>
+📞 Contact Us
+</h2>
+
+<p>
+WhatsApp یہاں صرف direct contact کے لیے ہے۔
+خریداری کے لیے Product پر Buy Now استعمال کریں۔
+</p>
+
 
 <div class="contact-buttons">
 
-<a href="https://wa.me/923438038809" target="_blank">
-WhatsApp
+<a
+href="https://wa.me/923438038809"
+target="_blank">
+
+💬 WhatsApp
+
 </a>
 
-<a href="mailto:YOUR_EMAIL_ADDRESS">
-Email
+
+<a
+href="mailto:YOUR_EMAIL_ADDRESS">
+
+📧 Email
+
 </a>
 
 </div>
@@ -389,95 +1210,154 @@ Email
 </section>
 
 
-<!-- ADMIN PANEL -->
+<!-- =========================
+     PRODUCT MANAGER
+========================= -->
 
-<section id="adminPanel" class="admin-box">
+<section class="admin">
 
-<h3>🔐 Product Admin Panel</h3>
+<h2>
+🛠️ Product Gallery Manager
+</h2>
 
-<div class="notice">
-Use this section to add your own products and images.
-Products added here are saved in this browser using local storage.
-</div>
+<p class="small">
 
-<div class="admin-grid">
+یہاں سے آپ نئے products اور تصاویر شامل کر سکتے ہیں۔
+یہ products اسی browser میں محفوظ رہیں گے۔
 
-<div>
-<label>Product Name</label>
-<input id="adminName" placeholder="Example: Premium Logo">
-</div>
+</p>
 
-<div>
-<label>Category</label>
-<select id="adminCategory">
-<option>AI Logos</option>
-<option>AI Profile Pictures</option>
-<option>Social Media Designs</option>
-<option>Business Graphics</option>
+
+<label>
+Product Name
+</label>
+
+<input
+id="newName"
+placeholder="Product name">
+
+
+<label>
+Category
+</label>
+
+<select id="newCategory">
+
+<option>
+AI Logos
+</option>
+
+<option>
+AI Profile Pictures
+</option>
+
+<option>
+Social Media Designs
+</option>
+
+<option>
+Business Graphics
+</option>
+
 </select>
-</div>
 
-<div>
-<label>Price in USD</label>
-<input id="adminPrice" type="number" min="1" placeholder="10">
-</div>
 
-<div>
-<label>Product Image URL</label>
-<input id="adminImageUrl" placeholder="https://example.com/image.jpg">
-</div>
+<label>
+Price USD
+</label>
 
-<div style="grid-column:1/-1">
-<label>Product Description</label>
-<textarea id="adminDescription"
-placeholder="Write a short product description"></textarea>
-</div>
+<input
+id="newPrice"
+type="number"
+placeholder="10">
 
-<div style="grid-column:1/-1">
-<label>Or Upload Product Image</label>
-<input id="adminImageFile" type="file" accept="image/*">
-</div>
 
-<div style="grid-column:1/-1">
-<label>Download / Delivery URL (optional)</label>
-<input id="adminDownloadUrl"
-placeholder="https://your-file-link.com/file">
-</div>
+<label>
+Description
+</label>
 
-</div>
+<textarea
+id="newDescription"
+placeholder="Product description">
+</textarea>
 
-<br>
 
-<button class="secondary" onclick="addProduct()">
-➕ Add Product
+<label>
+Image URL
+</label>
+
+<input
+id="newImage"
+placeholder="https://example.com/image.jpg">
+
+
+<button
+onclick="addProduct()">
+
+➕ Add Product to Gallery
+
 </button>
 
-<div class="admin-products" id="adminProducts"></div>
+
+<div
+id="adminList"
+class="admin-list">
+</div>
 
 </section>
+
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-© 2026 Digital Creative Studio • Digital Design Services
+
+<div class="footer-inner">
+
+<div class="footer-logo">
+
+Digital <span>Creative Studio</span>
+
+</div>
+
+<p>
+AI Designs • Logos • Profile Pictures • Social Media Graphics
+</p>
+
+<p>
+© 2026 Digital Creative Studio. All Rights Reserved.
+</p>
+
+</div>
+
 </footer>
 
 
 <script>
 
-/* =========================
-   SETTINGS
-========================= */
 
-let usdToPkr = 278;
-
-/* Your WhatsApp number */
-const ownerWhatsApp = "923438038809";
+/* ==================================================
+   MAIN SETTINGS
+================================================== */
 
 
-/* =========================
-   DEFAULT PRODUCTS
-========================= */
+/* آپ کا WhatsApp نمبر */
+const ownerWhatsApp =
+"923438038809";
+
+
+/* Backup USD → PKR rate */
+let usdToPkr =
+278;
+
+
+/* ==================================================
+   PRODUCTS
+================================================== */
 
 const defaultProducts = [
 
@@ -486,7 +1366,8 @@ name:"Minimal Business Logo",
 category:"AI Logos",
 price:10,
 icon:"🎨",
-description:"Clean professional logo for your business."
+description:
+"Clean professional logo for your business."
 },
 
 {
@@ -494,7 +1375,8 @@ name:"Luxury Logo",
 category:"AI Logos",
 price:15,
 icon:"👑",
-description:"Premium elegant logo for brands and businesses."
+description:
+"Premium elegant logo for brands and businesses."
 },
 
 {
@@ -502,7 +1384,8 @@ name:"3D Logo",
 category:"AI Logos",
 price:15,
 icon:"💎",
-description:"Modern 3D logo concept for your brand."
+description:
+"Modern 3D logo concept for your brand."
 },
 
 {
@@ -510,7 +1393,8 @@ name:"Gaming Logo",
 category:"AI Logos",
 price:12,
 icon:"🎮",
-description:"Gaming-style logo for gamers and channels."
+description:
+"Gaming-style logo for gamers and channels."
 },
 
 {
@@ -518,7 +1402,8 @@ name:"Restaurant Logo",
 category:"AI Logos",
 price:12,
 icon:"🍔",
-description:"Creative logo for restaurants and food businesses."
+description:
+"Creative logo for restaurants and food businesses."
 },
 
 {
@@ -526,15 +1411,18 @@ name:"YouTube Logo",
 category:"AI Logos",
 price:10,
 icon:"▶️",
-description:"Custom logo for YouTubers and creators."
+description:
+"Custom logo for YouTubers and creators."
 },
+
 
 {
 name:"Professional Portrait",
 category:"AI Profile Pictures",
 price:5,
 icon:"👔",
-description:"Professional AI portrait for your profile."
+description:
+"Professional AI portrait for your profile."
 },
 
 {
@@ -542,7 +1430,8 @@ name:"Business Profile",
 category:"AI Profile Pictures",
 price:7,
 icon:"💼",
-description:"Professional business profile picture."
+description:
+"Professional business profile picture."
 },
 
 {
@@ -550,7 +1439,8 @@ name:"3D Avatar",
 category:"AI Profile Pictures",
 price:8,
 icon:"🤖",
-description:"Modern AI 3D avatar for social media."
+description:
+"Modern AI 3D avatar for social media."
 },
 
 {
@@ -558,7 +1448,8 @@ name:"Cartoon Avatar",
 category:"AI Profile Pictures",
 price:6,
 icon:"🎭",
-description:"Fun cartoon-style AI profile picture."
+description:
+"Fun cartoon-style AI profile picture."
 },
 
 {
@@ -566,7 +1457,8 @@ name:"Gaming Avatar",
 category:"AI Profile Pictures",
 price:8,
 icon:"🎮",
-description:"Gaming-inspired AI profile picture."
+description:
+"Gaming-inspired AI profile picture."
 },
 
 {
@@ -574,15 +1466,18 @@ name:"Social Media DP",
 category:"AI Profile Pictures",
 price:5,
 icon:"📸",
-description:"Stylish AI display picture for social media."
+description:
+"Stylish AI display picture for social media."
 },
+
 
 {
 name:"Facebook Poster",
 category:"Social Media Designs",
 price:5,
 icon:"📘",
-description:"Promotional design for Facebook."
+description:
+"Promotional design for Facebook."
 },
 
 {
@@ -590,7 +1485,8 @@ name:"Instagram Post",
 category:"Social Media Designs",
 price:5,
 icon:"📷",
-description:"Eye-catching Instagram promotional design."
+description:
+"Eye-catching Instagram promotional design."
 },
 
 {
@@ -598,7 +1494,8 @@ name:"WhatsApp Promotion",
 category:"Social Media Designs",
 price:5,
 icon:"💬",
-description:"Promotional graphic for WhatsApp marketing."
+description:
+"Promotional graphic for WhatsApp marketing."
 },
 
 {
@@ -606,7 +1503,8 @@ name:"YouTube Thumbnail",
 category:"Social Media Designs",
 price:6,
 icon:"▶️",
-description:"Click-worthy YouTube thumbnail design."
+description:
+"Click-worthy YouTube thumbnail design."
 },
 
 {
@@ -614,61 +1512,51 @@ name:"Business Advertisement",
 category:"Business Graphics",
 price:8,
 icon:"📢",
-description:"Professional promotional advertisement."
+description:
+"Professional promotional advertisement."
 },
 
 {
-name:"Sale / Discount Poster",
+name:"Sale Discount Poster",
 category:"Business Graphics",
 price:7,
 icon:"🔥",
-description:"Eye-catching sale and discount design."
+description:
+"Eye-catching sale and discount design."
 }
 
 ];
 
 
-/* =========================
-   PRODUCT STORAGE
-========================= */
+/* ==================================================
+   LOAD PRODUCTS
+================================================== */
 
-function getProducts(){
+let products =
+JSON.parse(
+localStorage.getItem(
+"DCS_PRODUCTS"
+)
+) || defaultProducts;
 
-const saved =
-localStorage.getItem("dcs_products");
 
-if(saved){
-
-try{
-return JSON.parse(saved);
-}catch(error){}
-}
-
-localStorage.setItem(
-"dcs_products",
-JSON.stringify(defaultProducts)
-);
-
-return defaultProducts;
-
-}
-
-let products = getProducts();
-
+/* ==================================================
+   SAVE PRODUCTS
+================================================== */
 
 function saveProducts(){
 
 localStorage.setItem(
-"dcs_products",
+"DCS_PRODUCTS",
 JSON.stringify(products)
 );
 
 }
 
 
-/* =========================
+/* ==================================================
    EXCHANGE RATE
-========================= */
+================================================== */
 
 async function getExchangeRate(){
 
@@ -682,7 +1570,10 @@ await fetch(
 const data =
 await response.json();
 
-if(data.rates && data.rates.PKR){
+if(
+data.rates &&
+data.rates.PKR
+){
 
 usdToPkr =
 data.rates.PKR;
@@ -691,7 +1582,9 @@ data.rates.PKR;
 
 }catch(error){
 
-console.log("Using backup PKR rate.");
+console.log(
+"Using backup PKR rate."
+);
 
 }
 
@@ -700,512 +1593,45 @@ renderProducts();
 }
 
 
-function pkrPrice(usd){
-
-return Math.round(
-usd * usdToPkr
-);
-
-}
-
-
-/* =========================
-   PRODUCT IMAGE
-========================= */
-
-function imageForProduct(product){
-
-if(product.image){
-
-return `
-<img
-class="product-image"
-src="${product.image}"
-alt="${escapeHtml(product.name)}"
-onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-<div class="icon" style="display:none">
-${product.icon || "🎨"}
-</div>
-`;
-
-}
-
-return `
-<div class="icon">
-${product.icon || "🎨"}
-</div>
-`;
-
-}
-
-
-/* =========================
-   ESCAPE TEXT
-========================= */
-
-function escapeHtml(text){
-
-return String(text)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================
+/* ==================================================
    RENDER PRODUCTS
-========================= */
+================================================== */
 
 function renderProducts(){
 
-const container =
-document.getElementById("products");
+const box =
+document.getElementById(
+"productsGrid"
+);
 
 const search =
-document.getElementById("search").value
-.toLowerCase()
-.trim();
+document.getElementById(
+"search"
+).value
+.toLowerCase();
 
 const category =
-document.getElementById("categoryFilter").value;
+document.getElementById(
+"category"
+).value;
 
-container.innerHTML="";
 
-let filtered =
-products.filter(function(product){
+box.innerHTML="";
 
-const matchesSearch =
-product.name.toLowerCase()
-.includes(search) ||
-product.description.toLowerCase()
-.includes(search);
 
-const matchesCategory =
-category==="All" ||
-product.category===category;
+const filtered =
+products.filter(
+function(p){
 
-return matchesSearch && matchesCategory;
+const text =
+(
+p.name +
+" " +
+p.description
+)
+.toLowerCase();
 
-});
+const searchMatch =
+text.includes(search);
 
-
-const categories =
-[...new Set(filtered.map(p=>p.category))];
-
-
-categories.forEach(function(categoryName){
-
-const title =
-document.createElement("h2");
-
-title.className="category-title";
-
-title.innerText =
-categoryName;
-
-container.appendChild(title);
-
-
-filtered
-.filter(p=>p.category===categoryName)
-.forEach(function(product){
-
-const card =
-document.createElement("div");
-
-card.className="card";
-
-card.innerHTML = `
-
-${imageForProduct(product)}
-
-<h3>${escapeHtml(product.name)}</h3>
-
-<p>${escapeHtml(product.description)}</p>
-
-<div class="price">
-$${product.price}
-</div>
-
-<div class="price-pkr">
-≈ PKR ${pkrPrice(product.price).toLocaleString()}
-</div>
-
-<button onclick="openOrder(
-'${escapeJs(product.name)}',
-${product.price}
-)">
-Select / Buy Now
-</button>
-
-`;
-
-container.appendChild(card);
-
-});
-
-});
-
-
-if(filtered.length===0){
-
-container.innerHTML =
-"<div class='info'>No products found.</div>";
-
-}
-
-renderAdminProducts();
-
-}
-
-
-function escapeJs(text){
-
-return String(text)
-.replace(/\\/g,"\\\\")
-.replace(/'/g,"\\'")
-.replace(/\n/g,"\\n")
-.replace(/\r/g,"");
-
-}
-
-
-/* =========================
-   ORDER
-========================= */
-
-function openOrder(productName,priceUSD){
-
-const pkr =
-pkrPrice(priceUSD);
-
-document.getElementById("product").value =
-productName;
-
-document.getElementById("price").value =
-"$" + priceUSD +
-" / ≈ PKR " +
-pkr.toLocaleString();
-
-const form =
-document.getElementById("orderForm");
-
-form.style.display="block";
-
-form.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-}
-
-
-/* =========================
-   PAYMENT DETAILS
-========================= */
-
-function showPaymentDetails(){
-
-const method =
-document.getElementById("payment").value;
-
-document.getElementById("easypaisa")
-.style.display="none";
-
-document.getElementById("jazzcash")
-.style.display="none";
-
-document.getElementById("bank")
-.style.display="none";
-
-document.getElementById("international")
-.style.display="none";
-
-const message =
-document.getElementById("paymentMessage");
-
-
-if(method==="Easypaisa"){
-
-document.getElementById("easypaisa")
-.style.display="block";
-
-message.innerText =
-"Please pay the PKR amount shown above using Easypaisa.";
-
-}
-
-else if(method==="JazzCash"){
-
-document.getElementById("jazzcash")
-.style.display="block";
-
-message.innerText =
-"Please pay the PKR amount shown above using JazzCash.";
-
-}
-
-else if(method==="Bank Transfer"){
-
-document.getElementById("bank")
-.style.display="block";
-
-message.innerText =
-"Bank Transfer is coming soon.";
-
-}
-
-else if(method==="International Payment"){
-
-document.getElementById("international")
-.style.display="block";
-
-message.innerText =
-"International Payment is coming soon.";
-
-}
-
-}
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-document
-.getElementById("orderFormElement")
-.addEventListener(
-"submit",
-function(event){
-
-event.preventDefault();
-
-const product =
-document.getElementById("product").value;
-
-const price =
-document.getElementById("price").value;
-
-const name =
-document.getElementById("name").value;
-
-const whatsapp =
-document.getElementById("whatsapp").value;
-
-const email =
-document.getElementById("email").value;
-
-const payment =
-document.getElementById("payment").value;
-
-const transaction =
-document.getElementById("transaction").value;
-
-const instructions =
-document.getElementById("instructions").value;
-
-
-const message =
-"NEW ORDER\n\n" +
-
-"Product: " +
-product + "\n" +
-
-"Price: " +
-price + "\n" +
-
-"Customer Name: " +
-name + "\n" +
-
-"Customer WhatsApp: " +
-whatsapp + "\n" +
-
-"Email: " +
-email + "\n" +
-
-"Payment Method: " +
-payment + "\n" +
-
-"Transaction ID: " +
-transaction + "\n" +
-
-"Instructions: " +
-instructions;
-
-
-const url =
-"https://wa.me/" +
-ownerWhatsApp +
-"?text=" +
-encodeURIComponent(message);
-
-
-window.open(
-url,
-"_blank"
-);
-
-}
-);
-
-
-/* =========================
-   ADMIN PANEL
-========================= */
-
-function toggleAdmin(){
-
-const panel =
-document.getElementById("adminPanel");
-
-if(panel.style.display==="block"){
-
-panel.style.display="none";
-
-}else{
-
-panel.style.display="block";
-
-panel.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-}
-
-
-/* =========================
-   ADD PRODUCT
-========================= */
-
-async function addProduct(){
-
-const name =
-document.getElementById("adminName")
-.value.trim();
-
-const category =
-document.getElementById("adminCategory")
-.value;
-
-const price =
-parseFloat(
-document.getElementById("adminPrice").value
-);
-
-const description =
-document.getElementById("adminDescription")
-.value.trim();
-
-const imageUrl =
-document.getElementById("adminImageUrl")
-.value.trim();
-
-const downloadUrl =
-document.getElementById("adminDownloadUrl")
-.value.trim();
-
-const file =
-document.getElementById("adminImageFile")
-.files[0];
-
-
-if(!name || !price || !description){
-
-alert(
-"Please enter product name, price and description."
-);
-
-return;
-
-}
-
-
-let image = imageUrl;
-
-
-/* Uploaded image */
-
-if(file){
-
-image =
-await readImage(file);
-
-}
-
-
-const newProduct = {
-
-name:name,
-
-category:category,
-
-price:price,
-
-description:description,
-
-image:image,
-
-downloadUrl:downloadUrl,
-
-icon:"✨"
-
-};
-
-
-products.push(newProduct);
-
-saveProducts();
-
-clearAdminForm();
-
-renderProducts();
-
-alert(
-"Product added successfully."
-);
-
-}
-
-
-/* =========================
-   IMAGE READER
-========================= */
-
-function readImage(file){
-
-return new Promise(
-function(resolve,reject){
-
-const reader =
-new FileReader();
-
-reader.onload =
-function(event){
-
-resolve(event.target.result);
-
-};
-
-reader.onerror =
-reject;
-
-reader.readAsDataURL(file);
-
-}
-);
-
-}
-
-
-/* =========================
-   CLEAR ADMIN FORM
-========================= */
-
-function clearAdminForm(){
-
-document.getElementByI
+const categoryMatch 
