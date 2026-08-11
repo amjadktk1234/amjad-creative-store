@@ -7,33 +7,185 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f7f7fb;color:#171717}
-header{background:#111827;color:#fff;padding:28px 18px;text-align:center}
-header h1{margin:0 0 8px;font-size:32px}
-header p{margin:0;color:#d1d5db}
-nav{padding:14px;text-align:center;background:#fff;border-bottom:1px solid #e5e7eb}
-nav a{margin:0 12px;color:#111827;text-decoration:none;font-weight:600}
-.container{max-width:1000px;margin:auto;padding:28px 18px}
-.hero{text-align:center;padding:25px 0 15px}
-.hero h2{font-size:28px;margin-bottom:8px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 5px 20px #0000000a}
-.icon{font-size:42px}
-.card h3{margin:12px 0 8px}
-.price{font-size:24px;font-weight:700;margin:14px 0}
-button{width:100%;border:0;border-radius:10px;padding:12px;background:#111827;color:#fff;font-size:16px;cursor:pointer}
-button:hover{opacity:.9}
-.info{background:#fff;border-radius:16px;padding:22px;margin-top:24px;border:1px solid #e5e7eb}
-.form-box{display:none;background:#fff;border-radius:16px;padding:22px;margin-top:24px;border:1px solid #e5e7eb}
-.form-box h3{margin-top:0}
-label{display:block;font-weight:600;margin-top:14px;margin-bottom:6px}
-input,select,textarea{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:9px;font-size:15px}
-textarea{min-height:90px;resize:vertical}
-.notice{background:#f3f4f6;padding:14px;border-radius:10px;margin:15px 0;font-size:14px}
-.payment-box{background:#fff7ed;border:1px solid #fed7aa;padding:14px;border-radius:10px;margin-top:15px}
-.cancel-box{background:#fef2f2;border:1px solid #fecaca;padding:14px;border-radius:10px;margin-top:15px}
-footer{text-align:center;padding:28px;color:#6b7280}
-.small{font-size:13px;color:#6b7280}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7f7fb;
+  color:#171717;
+}
+
+header{
+  background:#111827;
+  color:#fff;
+  padding:28px 18px;
+  text-align:center;
+}
+
+header h1{
+  margin:0 0 8px;
+  font-size:32px;
+}
+
+header p{
+  margin:0;
+  color:#d1d5db;
+}
+
+nav{
+  padding:14px;
+  text-align:center;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+}
+
+nav a{
+  margin:0 12px;
+  color:#111827;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:28px 18px;
+}
+
+.hero{
+  text-align:center;
+  padding:25px 0 15px;
+}
+
+.hero h2{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 5px 20px #0000000a;
+}
+
+.icon{
+  font-size:42px;
+}
+
+.card h3{
+  margin:12px 0 8px;
+}
+
+.price{
+  font-size:24px;
+  font-weight:700;
+  margin:14px 0;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:10px;
+  padding:12px;
+  background:#111827;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+.info,
+.form-box{
+  background:#fff;
+  border-radius:16px;
+  padding:22px;
+  margin-top:24px;
+  border:1px solid #e5e7eb;
+}
+
+.form-box{
+  display:none;
+}
+
+.form-box h3{
+  margin-top:0;
+}
+
+label{
+  display:block;
+  font-weight:600;
+  margin-top:14px;
+  margin-bottom:6px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  font-size:15px;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.payment-box{
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+.notice{
+  background:#f3f4f6;
+  padding:14px;
+  border-radius:10px;
+  margin:15px 0;
+  font-size:14px;
+}
+
+.cancel-box{
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  padding:14px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+.payment-details{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  background:#fff;
+  border-radius:8px;
+}
+
+footer{
+  text-align:center;
+  padding:28px;
+  color:#6b7280;
+}
+
+.small{
+  font-size:13px;
+  color:#6b7280;
+}
 </style>
 </head>
 
@@ -64,7 +216,9 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <h3>Custom AI Logo</h3>
 <p>Professional custom logo concept for a business, page or brand.</p>
 <div class="price">$10</div>
-<button onclick="openOrder('Custom AI Logo','$10')">Buy Now</button>
+<button type="button" onclick="openOrder('Custom AI Logo','$10')">
+Buy Now
+</button>
 </div>
 
 <div class="card">
@@ -72,7 +226,9 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <h3>AI Profile Picture</h3>
 <p>Custom AI-style profile picture made from your photo and instructions.</p>
 <div class="price">$5</div>
-<button onclick="openOrder('AI Profile Picture','$5')">Buy Now</button>
+<button type="button" onclick="openOrder('AI Profile Picture','$5')">
+Buy Now
+</button>
 </div>
 
 <div class="card">
@@ -80,7 +236,9 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <h3>Social Media Poster</h3>
 <p>Simple promotional graphic for Facebook, Instagram or WhatsApp.</p>
 <div class="price">$5</div>
-<button onclick="openOrder('Social Media Poster','$5')">Buy Now</button>
+<button type="button" onclick="openOrder('Social Media Poster','$5')">
+Buy Now
+</button>
 </div>
 
 </section>
@@ -90,10 +248,11 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <h3>Place Your Order</h3>
 
 <div class="notice">
-<strong>Important:</strong> Your order will be processed only after we verify your payment in our account.
+<strong>Important:</strong>
+Your order will be processed only after we verify your payment in our account.
 </div>
 
-<form onsubmit="submitOrder(event)">
+<form id="orderFormElement">
 
 <label>Selected Product</label>
 <input type="text" id="product" readonly>
@@ -111,46 +270,308 @@ footer{text-align:center;padding:28px;color:#6b7280}
 <input type="email" id="email" placeholder="your@email.com">
 
 <label>Payment Method</label>
-<select id="payment" required>
-<option value="">Select payment method</option>
-<option>JazzCash</option>
-<option>Easypaisa</option>
-<option>Bank Transfer</option>
-<option>International Payment</option>
+
+<select id="payment" required onchange="showPaymentDetails()">
+
+<option value="">
+Select payment method
+</option>
+
+<option value="Easypaisa">
+Easypaisa
+</option>
+
+<option value="JazzCash">
+JazzCash
+</option>
+
+<option value="Bank Transfer">
+Bank Transfer
+</option>
+
+<option value="International Payment">
+International Payment
+</option>
+
 </select>
 
 <div class="payment-box">
-  <strong>Payment Instructions</strong>
 
-  <p id="paymentMessage">
-    Please select a payment method to see the payment instructions.
-  </p>
+<strong>Payment Instructions</strong>
 
-  <div id="easypaisaDetails" style="display:none;">
-    <strong>Easypaisa</strong>
-    <p>Account Name: YOUR NAME</p>
-    <p>Account Number: YOUR EASYPaisa NUMBER</p>
-  </div>
+<p id="paymentMessage">
+Please select a payment method above.
+</p>
 
-  <div id="jazzcashDetails" style="display:none;">
-    <strong>JazzCash</strong>
-    <p>Account Name: YOUR NAME</p>
-    <p>Account Number: YOUR JAZZCASH NUMBER</p>
-  </div>
+<div id="easypaisa" class="payment-details">
 
-  <div id="bankDetails" style="display:none;">
-    <strong>Bank Transfer</strong>
-    <p>Bank Name: YOUR BANK</p>
-    <p>Account Title: YOUR NAME</p>
-    <p>Account Number / IBAN: YOUR ACCOUNT</p>
-  </div>
+<strong>Easypaisa</strong>
 
-  <div id="internationalDetails" style="display:none;">
-    <strong>International Payment</strong>
-    <p>International payment instructions will be provided after order confirmation.</p>
-  </div>
+<p>Account Name: YOUR NAME</p>
+<p>Account Number: YOUR EASYPaisa NUMBER</p>
 
-  <p class="small">
-    Please make payment only using the selected method. Your order will be processed after payment is verified.
-  </p>
 </div>
+
+<div id="jazzcash" class="payment-details">
+
+<strong>JazzCash</strong>
+
+<p>Account Name: YOUR NAME</p>
+<p>Account Number: YOUR JAZZCASH NUMBER</p>
+
+</div>
+
+<div id="bank" class="payment-details">
+
+<strong>Bank Transfer</strong>
+
+<p>Bank Name: YOUR BANK</p>
+<p>Account Title: YOUR NAME</p>
+<p>Account Number / IBAN: YOUR ACCOUNT</p>
+
+</div>
+
+<div id="international" class="payment-details">
+
+<strong>International Payment</strong>
+
+<p>International payment instructions will be provided after the order request.</p>
+
+</div>
+
+<p class="small">
+Please make payment only using the selected payment method.
+</p>
+
+</div>
+
+<label>Transaction ID / Reference</label>
+
+<input
+type="text"
+id="transaction"
+placeholder="Enter transaction ID"
+required
+>
+
+<label>Payment Screenshot</label>
+
+<input
+type="file"
+id="screenshot"
+accept="image/*"
+required
+>
+
+<p class="small">
+Please keep your payment screenshot. We will verify the payment in our account.
+</p>
+
+<label>Order Instructions</label>
+
+<textarea
+id="instructions"
+placeholder="Tell us what you want in your design..."
+></textarea>
+
+<div class="cancel-box">
+
+<strong>Payment Verification:</strong>
+
+<p>
+If payment is not received within approximately 15–20 minutes,
+the order may be cancelled.
+</p>
+
+</div>
+
+<button type="submit">
+Submit Order
+</button>
+
+</form>
+
+</section>
+
+<section id="how" class="info">
+
+<h3>How It Works</h3>
+
+<ol>
+<li>Select your design.</li>
+<li>Fill in your order details.</li>
+<li>Select a payment method.</li>
+<li>Make the payment.</li>
+<li>Enter your transaction ID and keep your payment screenshot.</li>
+<li>We verify the payment in our account.</li>
+<li>After successful verification, your design is manually prepared and delivered.</li>
+</ol>
+
+<p class="small">
+A payment screenshot alone does not confirm an order.
+Orders are processed only after payment is verified.
+</p>
+
+</section>
+
+<section id="contact" class="info">
+
+<h3>Contact</h3>
+
+<p>
+For questions about an order, contact the store owner.
+</p>
+
+<p class="small">
+Contact details will be added after the payment system is finalized.
+</p>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 Amjad Creative Studio • Digital Design Services
+</footer>
+
+<script>
+
+function openOrder(productName, productPrice){
+
+document.getElementById("product").value = productName;
+
+document.getElementById("price").value = productPrice;
+
+var form = document.getElementById("orderForm");
+
+form.style.display = "block";
+
+form.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+}
+
+function showPaymentDetails(){
+
+var method =
+document.getElementById("payment").value;
+
+document.getElementById("easypaisa").style.display = "none";
+
+document.getElementById("jazzcash").style.display = "none";
+
+document.getElementById("bank").style.display = "none";
+
+document.getElementById("international").style.display = "none";
+
+var message =
+document.getElementById("paymentMessage");
+
+if(method === "Easypaisa"){
+
+document.getElementById("easypaisa").style.display = "block";
+
+message.innerText =
+"Send your payment to the Easypaisa account shown below.";
+
+}
+
+else if(method === "JazzCash"){
+
+document.getElementById("jazzcash").style.display = "block";
+
+message.innerText =
+"Send your payment to the JazzCash account shown below.";
+
+}
+
+else if(method === "Bank Transfer"){
+
+document.getElementById("bank").style.display = "block";
+
+message.innerText =
+"Use the bank details shown below to make your payment.";
+
+}
+
+else if(method === "International Payment"){
+
+document.getElementById("international").style.display = "block";
+
+message.innerText =
+"Follow the international payment instructions shown below.";
+
+}
+
+else{
+
+message.innerText =
+"Please select a payment method above.";
+
+}
+
+}
+
+document
+.getElementById("orderFormElement")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+var product =
+document.getElementById("product").value;
+
+var price =
+document.getElementById("price").value;
+
+var name =
+document.getElementById("name").value;
+
+var whatsapp =
+document.getElementById("whatsapp").value;
+
+var email =
+document.getElementById("email").value;
+
+var payment =
+document.getElementById("payment").value;
+
+var transaction =
+document.getElementById("transaction").value;
+
+var instructions =
+document.getElementById("instructions").value;
+
+var message =
+"NEW ORDER\n\n" +
+
+"Product: " + product + "\n" +
+
+"Price: " + price + "\n" +
+
+"Name: " + name + "\n" +
+
+"WhatsApp: " + whatsapp + "\n" +
+
+"Email: " + email + "\n" +
+
+"Payment Method: " + payment + "\n" +
+
+"Transaction ID: " + transaction + "\n" +
+
+"Instructions: " + instructions;
+
+var whatsappURL =
+"https://wa.me/?text=" +
+encodeURIComponent(message);
+
+window.open(whatsappURL,"_blank");
+
+});
+
+</script>
+
+</body>
+  </html>
