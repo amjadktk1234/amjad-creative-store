@@ -11,57 +11,92 @@
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:#f5f7fb;
+  background:#f4f7fb;
   color:#172033;
 }
 
 header{
-  background:linear-gradient(135deg,#111827,#2563eb);
-  color:#fff;
-  padding:35px 18px;
+  background:#07183d;
+  color:white;
+  padding:18px;
   text-align:center;
 }
 
 header h1{
   margin:0;
-  font-size:34px;
+  font-size:30px;
 }
 
 header p{
-  margin:10px 0 0;
+  margin:7px 0 0;
   color:#dbeafe;
+}
+
+nav{
+  margin-top:15px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+}
+
+.contact-btn{
+  display:inline-block;
+  background:#16a34a;
+  color:white;
+  padding:11px 18px;
+  border-radius:9px;
+  text-decoration:none;
+  margin-top:15px;
+  font-weight:bold;
 }
 
 .container{
   max-width:1150px;
   margin:auto;
-  padding:25px 16px;
+  padding:20px 15px;
 }
 
+/* HERO */
 .hero{
-  background:#fff;
+  background:#07183d;
   border-radius:20px;
-  padding:35px 20px;
+  overflow:hidden;
+  margin-bottom:35px;
+}
+
+.hero img{
+  width:100%;
+  display:block;
+  max-height:500px;
+  object-fit:cover;
+}
+
+.hero-text{
+  padding:25px;
   text-align:center;
-  margin-bottom:30px;
-  box-shadow:0 8px 25px rgba(0,0,0,.07);
+  color:white;
 }
 
-.hero h2{
-  margin-top:0;
-  font-size:28px;
+.hero-text h2{
+  margin:0 0 10px;
+  font-size:30px;
 }
 
-.hero button{
-  background:#16a34a;
-  color:#fff;
-  border:0;
-  padding:13px 22px;
+.shop-btn{
+  display:inline-block;
+  background:#fbbf24;
+  color:#111827;
+  padding:13px 25px;
   border-radius:10px;
+  text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
 }
 
+/* PRODUCTS */
 .section-title{
   text-align:center;
   margin:35px 0 20px;
@@ -69,15 +104,15 @@ header p{
 
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:22px;
 }
 
 .product{
-  background:#fff;
+  background:white;
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 7px 24px rgba(0,0,0,.08);
+  box-shadow:0 7px 25px rgba(0,0,0,.09);
   transition:.25s;
 }
 
@@ -85,178 +120,163 @@ header p{
   transform:translateY(-5px);
 }
 
-.product img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  background:#e5e7eb;
-  cursor:pointer;
+.product-image{
+  height:210px;
+  background:linear-gradient(135deg,#111827,#4f46e5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.product-image h3{
+  font-size:28px;
 }
 
 .product-content{
-  padding:18px;
+  padding:20px;
 }
 
-.product h3{
+.product-content h3{
   margin:0 0 8px;
 }
 
-.product p{
+.product-content p{
   color:#64748b;
-  min-height:42px;
+  min-height:40px;
 }
 
-.price-pkr{
+.pkr{
+  color:#111827;
   font-size:21px;
   font-weight:bold;
-  color:#16a34a;
 }
 
-.price-usd{
+.usd{
   color:#2563eb;
   font-weight:bold;
-  margin:4px 0 15px;
+  margin:5px 0 15px;
 }
 
 .buy{
   width:100%;
-  background:#2563eb;
-  color:#fff;
   border:0;
   padding:13px;
+  background:#fbbf24;
+  color:#111827;
   border-radius:9px;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
 }
 
-.buy:hover{
-  background:#1d4ed8;
-}
-
+/* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:15px;
 }
 
 .gallery img{
   width:100%;
-  height:180px;
+  height:200px;
   object-fit:cover;
-  border-radius:14px;
+  border-radius:15px;
   cursor:pointer;
 }
 
-.contact{
-  margin-top:35px;
-  background:#111827;
-  color:#fff;
-  padding:30px;
-  border-radius:18px;
-  text-align:center;
-}
-
-.contact button{
-  background:#16a34a;
-  color:#fff;
-  border:0;
-  padding:13px 24px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
+/* ORDER */
 #orderBox{
   display:none;
-  background:#fff;
-  margin-top:35px;
+  background:white;
   padding:28px;
+  margin-top:35px;
   border-radius:18px;
-  box-shadow:0 8px 30px rgba(0,0,0,.1);
+  box-shadow:0 7px 28px rgba(0,0,0,.1);
 }
 
 #orderBox h2{
   margin-top:0;
 }
 
+label{
+  display:block;
+  font-weight:bold;
+  margin-top:10px;
+}
+
 input,select,textarea{
   width:100%;
   padding:13px;
-  margin:7px 0 16px;
+  margin:7px 0 12px;
   border:1px solid #cbd5e1;
   border-radius:9px;
   font-size:15px;
 }
 
-label{
-  font-weight:bold;
-}
-
-.payment-box{
-  background:#f1f5f9;
-  border-radius:12px;
+.payment{
+  background:#eef2ff;
   padding:16px;
-  margin-bottom:18px;
+  border-radius:10px;
+  margin:12px 0;
 }
 
 .submit{
   width:100%;
-  background:#16a34a;
-  color:#fff;
-  border:0;
   padding:14px;
+  border:0;
   border-radius:10px;
-  font-size:16px;
+  background:#16a34a;
+  color:white;
   font-weight:bold;
+  font-size:16px;
   cursor:pointer;
 }
 
 .success{
   display:none;
-  margin-top:20px;
+  margin-top:15px;
+  padding:15px;
   background:#dcfce7;
   color:#166534;
-  padding:18px;
-  border-radius:12px;
+  border-radius:10px;
 }
 
-.lightbox{
-  display:none;
-  position:fixed;
-  z-index:9999;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.lightbox img{
-  max-width:95%;
-  max-height:90%;
-  border-radius:12px;
-}
-
-.lightbox span{
-  position:absolute;
-  top:20px;
-  right:30px;
+/* CONTACT */
+.direct-contact{
+  margin-top:35px;
+  background:#07183d;
   color:white;
-  font-size:38px;
-  cursor:pointer;
+  padding:30px;
+  text-align:center;
+  border-radius:18px;
 }
 
+.direct-contact a{
+  display:inline-block;
+  margin-top:10px;
+  background:#16a34a;
+  color:white;
+  padding:13px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* FOOTER */
 footer{
-  margin-top:45px;
-  background:#0f172a;
+  margin-top:40px;
+  background:#07183d;
   color:#cbd5e1;
   text-align:center;
   padding:25px;
 }
 
 @media(max-width:600px){
-  header h1{font-size:27px}
-  .hero h2{font-size:23px}
+  header h1{font-size:25px}
+  nav a{display:inline-block;margin:5px}
+  .hero-text h2{font-size:23px}
 }
 </style>
 </head>
@@ -264,209 +284,282 @@ footer{
 <body>
 
 <header>
-  <h1>Amjad Creative Store</h1>
-  <p>Premium Digital Products & Creative Designs</p>
+
+<h1>Amjad Creative Store</h1>
+<p>Premium Digital Designs</p>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a class="contact-btn"
+href="https://wa.me/923438038809"
+target="_blank">
+WhatsApp Direct Contact
+</a>
+
 </header>
 
 <div class="container">
 
-<section class="hero">
-  <h2>Welcome to Our Store</h2>
-  <p>Choose your product, complete your order on the website, and submit your payment details.</p>
-  <button onclick="scrollToProducts()">Shop Now</button>
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<img src="store-design.png" alt="Amjad Creative Store">
+
+<div class="hero-text">
+<h2>Premium Digital Designs</h2>
+<p>Creative • Professional • High Quality</p>
+
+<a class="shop-btn" href="#products">
+Shop Now
+</a>
+</div>
+
 </section>
 
-<h2 class="section-title">Our Products</h2>
+
+<!-- PRODUCTS -->
+
+<h2 class="section-title" id="products">
+Our Premium Products
+</h2>
 
 <div class="products">
 
-  <div class="product">
-    <img
-      src="https://via.placeholder.com/700x500?text=Digital+Product+1"
-      alt="Premium Digital Product"
-      onclick="openImage(this.src)"
-    >
+<div class="product">
 
-    <div class="product-content">
-      <h3>Premium Digital Product</h3>
-      <p>High-quality digital creative product.</p>
+<div class="product-image">
+<h3>Social Media<br>Design</h3>
+</div>
 
-      <div class="price-pkr">Rs. 500</div>
-      <div class="price-usd">$1.80 USD</div>
+<div class="product-content">
 
-      <button class="buy"
-        onclick="openOrder('Premium Digital Product','500','$1.80')">
-        Buy Now
-      </button>
-    </div>
-  </div>
+<h3>Social Media Post Design</h3>
 
+<p>
+Creative social media post designs for your business.
+</p>
 
-  <div class="product">
-    <img
-      src="https://via.placeholder.com/700x500?text=Creative+Design"
-      alt="Creative Design Package"
-      onclick="openImage(this.src)"
-    >
+<div class="pkr">Rs. 500</div>
+<div class="usd">$1.80 USD</div>
 
-    <div class="product-content">
-      <h3>Creative Design Package</h3>
-      <p>Professional creative design package.</p>
+<button class="buy"
+onclick="openOrder('Social Media Post Design','Rs. 500','$1.80')">
+Buy Now
+</button>
 
-      <div class="price-pkr">Rs. 1,000</div>
-      <div class="price-usd">$3.60 USD</div>
-
-      <button class="buy"
-        onclick="openOrder('Creative Design Package','1000','$3.60')">
-        Buy Now
-      </button>
-    </div>
-  </div>
+</div>
+</div>
 
 
-  <div class="product">
-    <img
-      src="https://via.placeholder.com/700x500?text=Premium+Package"
-      alt="Premium Package"
-      onclick="openImage(this.src)"
-    >
+<div class="product">
 
-    <div class="product-content">
-      <h3>Premium Package</h3>
-      <p>Complete premium digital package.</p>
+<div class="product-image">
+<h3>Logo<br>Design</h3>
+</div>
 
-      <div class="price-pkr">Rs. 2,500</div>
-      <div class="price-usd">$9.00 USD</div>
+<div class="product-content">
 
-      <button class="buy"
-        onclick="openOrder('Premium Package','2500','$9.00')">
-        Buy Now
-      </button>
-    </div>
-  </div>
+<h3>Logo Design Package</h3>
+
+<p>
+Professional logo designs for brands and businesses.
+</p>
+
+<div class="pkr">Rs. 1,500</div>
+<div class="usd">$5.40 USD</div>
+
+<button class="buy"
+onclick="openOrder('Logo Design Package','Rs. 1,500','$5.40')">
+Buy Now
+</button>
+
+</div>
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+<h3>Business<br>Card</h3>
+</div>
+
+<div class="product-content">
+
+<h3>Business Card Design</h3>
+
+<p>
+Premium business card designs for your brand.
+</p>
+
+<div class="pkr">Rs. 1,000</div>
+<div class="usd">$3.60 USD</div>
+
+<button class="buy"
+onclick="openOrder('Business Card Design','Rs. 1,000','$3.60')">
+Buy Now
+</button>
+
+</div>
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+<h3>Flyer<br>Design</h3>
+</div>
+
+<div class="product-content">
+
+<h3>Flyer Design</h3>
+
+<p>
+Modern promotional flyer design for businesses.
+</p>
+
+<div class="pkr">Rs. 1,200</div>
+<div class="usd">$4.30 USD</div>
+
+<button class="buy"
+onclick="openOrder('Flyer Design','Rs. 1,200','$4.30')">
+Buy Now
+</button>
+
+</div>
+</div>
 
 </div>
 
 
-<h2 class="section-title">Gallery</h2>
+<!-- GALLERY -->
+
+<h2 class="section-title" id="gallery">
+Creative Gallery
+</h2>
 
 <div class="gallery">
 
-  <img
-    src="https://via.placeholder.com/700x500?text=Gallery+1"
-    onclick="openImage(this.src)"
-    alt="Gallery 1"
-  >
+<img src="store-design.png" alt="Design Gallery">
 
-  <img
-    src="https://via.placeholder.com/700x500?text=Gallery+2"
-    onclick="openImage(this.src)"
-    alt="Gallery 2"
-  >
+<img src="store-design.png" alt="Creative Design">
 
-  <img
-    src="https://via.placeholder.com/700x500?text=Gallery+3"
-    onclick="openImage(this.src)"
-    alt="Gallery 3"
-  >
+<img src="store-design.png" alt="Premium Design">
 
-  <img
-    src="https://via.placeholder.com/700x500?text=Gallery+4"
-    onclick="openImage(this.src)"
-    alt="Gallery 4"
-  >
+<img src="store-design.png" alt="Business Design">
 
 </div>
 
+
+<!-- ORDER -->
 
 <div id="orderBox">
 
-  <h2>Complete Your Order</h2>
+<h2 id="order">
+Complete Your Order</h2>
 
-  <label>Selected Product</label>
-  <input id="productName" readonly>
+<label>Selected Product</label>
+<input id="productName" readonly>
 
-  <label>Price in PKR</label>
-  <input id="productPrice" readonly>
+<label>PKR Price</label>
+<input id="productPrice" readonly>
 
-  <label>Price in USD</label>
-  <input id="productUSD" readonly>
+<label>USD Price</label>
+<input id="productUSD" readonly>
 
-  <label>Customer Name *</label>
-  <input id="customerName" placeholder="Enter your name">
+<label>Customer Name *</label>
+<input id="customerName"
+placeholder="Enter your name">
 
-  <label>WhatsApp Number (Optional)</label>
-  <input id="customerPhone" placeholder="Optional">
+<label>WhatsApp Number (Optional)</label>
+<input id="customerPhone"
+placeholder="Optional">
 
-  <label>Email (Optional)</label>
-  <input id="customerEmail" type="email" placeholder="Optional">
+<label>Email (Optional)</label>
+<input id="customerEmail"
+type="email"
+placeholder="Optional">
 
-  <label>Payment Method *</label>
-  <select id="paymentMethod" onchange="showPaymentDetails()">
-    <option value="">Select Payment Method</option>
-    <option value="Easypaisa">Easypaisa</option>
-    <option value="JazzCash">JazzCash</option>
-    <option value="Bank Transfer">Bank Transfer</option>
-  </select>
+<label>Payment Method *</label>
 
-  <div id="paymentDetails" class="payment-box">
-    Select a payment method.
-  </div>
+<select id="paymentMethod"
+onchange="paymentDetails()">
 
-  <label>Transaction ID *</label>
-  <input id="transactionId" placeholder="Enter transaction ID">
+<option value="">Select Payment Method</option>
+<option value="Easypaisa">Easypaisa</option>
+<option value="JazzCash">JazzCash</option>
+<option value="Bank Transfer">Bank Transfer</option>
 
-  <label>Payment Screenshot (Optional)</label>
-  <input id="paymentScreenshot" type="file" accept="image/*">
+</select>
 
-  <label>Order Notes (Optional)</label>
-  <textarea
-    id="notes"
-    rows="4"
-    placeholder="Additional information"
-  ></textarea>
+<div class="payment" id="paymentBox">
+Select payment method.
+</div>
 
-  <button class="submit" onclick="submitOrder()">
-    Submit Order
-  </button>
+<label>Transaction ID *</label>
 
-  <div id="successMessage" class="success">
-    Your order has been submitted successfully.
-    Please save your order information for reference.
-  </div>
+<input id="transactionId"
+placeholder="Enter transaction ID">
+
+<label>Payment Screenshot (Optional)</label>
+
+<input id="screenshot"
+type="file"
+accept="image/*">
+
+<label>Order Details (Optional)</label>
+
+<textarea id="notes"
+rows="4"
+placeholder="Write your requirements"></textarea>
+
+<button class="submit"
+onclick="submitOrder()">
+Submit Order
+</button>
+
+<div class="success"
+id="success">
+Order submitted successfully.
+</div>
 
 </div>
 
 
-<div class="contact">
+<!-- DIRECT WHATSAPP -->
 
-  <h2>Need Help?</h2>
+<div class="direct-contact" id="contact">
 
-  <p>Contact us directly on WhatsApp for questions or assistance.</p>
+<h2>Need Help?</h2>
 
-  <button onclick="directWhatsApp()">
-    Contact Us on WhatsApp
-  </button>
+<p>
+For questions or direct assistance, contact us on WhatsApp.
+</p>
+
+<a href="https://wa.me/923438038809"
+target="_blank">
+Contact Us on WhatsApp
+</a>
 
 </div>
 
-</div>
-
-
-<div class="lightbox" id="lightbox" onclick="closeImage()">
-  <span>&times;</span>
-  <img id="largeImage" src="" alt="Preview">
 </div>
 
 
 <footer>
-  © 2026 Amjad Creative Store. All Rights Reserved.
+
+© 2026 Amjad Creative Store. All Rights Reserved.
+
 </footer>
 
 
 <script>
-
-const STORE_WHATSAPP = "923438038809";
 
 const EASYPAISA_NAME = "Amjad Khan";
 const EASYPAISA_NUMBER = "YOUR_EASYPAISA_NUMBER";
@@ -474,164 +567,117 @@ const EASYPAISA_NUMBER = "YOUR_EASYPAISA_NUMBER";
 const JAZZCASH_NAME = "Amjad Khan";
 const JAZZCASH_NUMBER = "YOUR_JAZZCASH_NUMBER";
 
-const BANK_DETAILS =
-"Please contact us for bank transfer details.";
-
-let selectedProduct = "";
-let selectedPrice = "";
-let selectedUSD = "";
+let product = "";
+let pkr = "";
+let usd = "";
 
 
-function scrollToProducts(){
+function openOrder(name,price,dollar){
 
-  window.scrollTo({
-    top: document.querySelector(".products").offsetTop - 20,
-    behavior:"smooth"
-  });
+product = name;
+pkr = price;
+usd = dollar;
 
-}
+document.getElementById("productName").value = product;
+document.getElementById("productPrice").value = pkr;
+document.getElementById("productUSD").value = usd;
 
+document.getElementById("orderBox").style.display = "block";
 
-function openOrder(product,price,usd){
-
-  selectedProduct = product;
-  selectedPrice = price;
-  selectedUSD = usd;
-
-  document.getElementById("productName").value = product;
-  document.getElementById("productPrice").value = "Rs. " + price;
-  document.getElementById("productUSD").value = usd;
-
-  document.getElementById("orderBox").style.display = "block";
-
-  document.getElementById("orderBox").scrollIntoView({
-    behavior:"smooth"
-  });
+document.getElementById("orderBox").scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
-function showPaymentDetails(){
+function paymentDetails(){
 
-  const method =
-    document.getElementById("paymentMethod").value;
+const method =
+document.getElementById("paymentMethod").value;
 
-  const box =
-    document.getElementById("paymentDetails");
+const box =
+document.getElementById("paymentBox");
 
-  if(method === "Easypaisa"){
+if(method === "Easypaisa"){
 
-    box.innerHTML =
-      "<strong>Easypaisa</strong><br>" +
-      "Account Name: " +
-      EASYPAISA_NAME +
-      "<br>" +
-      "Account Number: " +
-      EASYPAISA_NUMBER;
+box.innerHTML =
+"<b>Easypaisa</b><br>" +
+"Account Name: " +
+EASYPAISA_NAME +
+"<br>" +
+"Account Number: " +
+EASYPAISA_NUMBER;
 
-  }
+}
 
-  else if(method === "JazzCash"){
+else if(method === "JazzCash"){
 
-    box.innerHTML =
-      "<strong>JazzCash</strong><br>" +
-      "Account Name: " +
-      JAZZCASH_NAME +
-      "<br>" +
-      "Account Number: " +
-      JAZZCASH_NUMBER;
+box.innerHTML =
+"<b>JazzCash</b><br>" +
+"Account Name: " +
+JAZZCASH_NAME +
+"<br>" +
+"Account Number: " +
+JAZZCASH_NUMBER;
 
-  }
+}
 
-  else if(method === "Bank Transfer"){
+else if(method === "Bank Transfer"){
 
-    box.innerHTML =
-      "<strong>Bank Transfer</strong><br>" +
-      BANK_DETAILS;
+box.innerHTML =
+"<b>Bank Transfer</b><br>" +
+"Please contact us for bank details.";
 
-  }
+}
 
-  else{
+else{
 
-    box.innerHTML =
-      "Select a payment method.";
+box.innerHTML =
+"Select payment method.";
 
-  }
+}
 
 }
 
 
 function submitOrder(){
 
-  const name =
-    document.getElementById("customerName").value.trim();
+const name =
+document.getElementById("customerName").value.trim();
 
-  const payment =
-    document.getElementById("paymentMethod").value;
+const method =
+document.getElementById("paymentMethod").value;
 
-  const transaction =
-    document.getElementById("transactionId").value.trim();
+const transaction =
+document.getElementById("transactionId").value.trim();
 
-  if(!name){
+if(!name){
 
-    alert("Please enter your name.");
-    return;
-
-  }
-
-  if(!payment){
-
-    alert("Please select a payment method.");
-    return;
-
-  }
-
-  if(!transaction){
-
-    alert("Please enter your transaction ID.");
-    return;
-
-  }
-
-  document.getElementById("successMessage").style.display = "block";
-
-  alert(
-    "Your order has been submitted successfully."
-  );
+alert("Please enter your name.");
+return;
 
 }
 
+if(!method){
 
-function directWhatsApp(){
-
-  const message =
-    encodeURIComponent(
-      "Hello, I want to contact you regarding Amjad Creative Store."
-    );
-
-  window.open(
-    "https://wa.me/" +
-    STORE_WHATSAPP +
-    "?text=" +
-    message,
-    "_blank"
-  );
+alert("Please select a payment method.");
+return;
 
 }
 
+if(!transaction){
 
-function openImage(src){
-
-  document.getElementById("largeImage").src = src;
-
-  document.getElementById("lightbox").style.display = "flex";
+alert("Please enter transaction ID.");
+return;
 
 }
 
+document.getElementById("success").style.display = "block";
 
-function closeImage(){
-
-  document.getElementById("lightbox").style.display = "none";
+alert(
+"Your order has been received successfully."
+);
 
 }
 
