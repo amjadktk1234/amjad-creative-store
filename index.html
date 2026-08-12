@@ -1,52 +1,374 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Supabase Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amjad Creative Store</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#222;
+}
+header{
+  background:#111827;
+  color:white;
+  padding:22px 15px;
+  text-align:center;
+}
+header h1{margin:0 0 8px;font-size:28px}
+header p{margin:0;color:#d1d5db}
+
+.container{
+  max-width:1100px;
+  margin:25px auto;
+  padding:0 15px;
+}
+
+.hero{
+  background:white;
+  border-radius:16px;
+  padding:25px;
+  text-align:center;
+  margin-bottom:25px;
+  box-shadow:0 4px 18px rgba(0,0,0,.07);
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.product{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.product img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  background:#eee;
+}
+
+.product-content{
+  padding:18px;
+}
+
+.product h3{
+  margin:0 0 8px;
+}
+
+.price{
+  font-size:22px;
+  font-weight:bold;
+  margin:10px 0 15px;
+}
+
+button{
+  border:0;
+  border-radius:9px;
+  padding:12px 18px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.buy{
+  width:100%;
+  background:#16a34a;
+  color:white;
+}
+
+.buy:hover{background:#15803d}
+
+#orderBox{
+  display:none;
+  background:white;
+  margin-top:30px;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:7px 0 15px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  font-size:15px;
+}
+
+label{
+  font-weight:bold;
+}
+
+.payment-box{
+  background:#f3f4f6;
+  padding:15px;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+.submit{
+  width:100%;
+  background:#2563eb;
+  color:white;
+  font-size:16px;
+}
+
+.whatsapp{
+  background:#16a34a;
+  color:white;
+  margin-top:10px;
+  width:100%;
+  display:none;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+  background:#111827;
+  color:#d1d5db;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Supabase Product Test</h1>
+<header>
+  <h1>Amjad Creative Store</h1>
+  <p>Premium Digital Products</p>
+</header>
 
-<div id="result">Testing...</div>
+<div class="container">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<section class="hero">
+  <h2>Welcome to Our Store</h2>
+  <p>Choose your product and place your order easily.</p>
+</section>
+
+<div class="products">
+
+  <div class="product">
+    <img src="https://mchewsmjbkexojdaruhj.supabase.co/storage/v1/object/public/product-images/file_0000000019cc81fdabdfa323355f5e11.png" alt="Digital Product">
+    <div class="product-content">
+      <h3>Premium Digital Product</h3>
+      <p>High quality digital product.</p>
+      <div class="price">Rs. 500</div>
+      <button class="buy"
+        onclick="openOrder('Premium Digital Product','500')">
+        Buy Now
+      </button>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="product-content">
+      <h3>Creative Design Package</h3>
+      <p>Professional digital creative package.</p>
+      <div class="price">Rs. 1000</div>
+      <button class="buy"
+        onclick="openOrder('Creative Design Package','1000')">
+        Buy Now
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div id="orderBox">
+
+<h2>Place Your Order</h2>
+
+<label>Selected Product</label>
+<input id="productName" readonly>
+
+<label>Price</label>
+<input id="productPrice" readonly>
+
+<label>Your Name</label>
+<input id="customerName" placeholder="Enter your name">
+
+<label>WhatsApp Number</label>
+<input id="customerPhone" placeholder="03XXXXXXXXX">
+
+<label>Email</label>
+<input id="customerEmail" type="email" placeholder="Enter your email">
+
+<label>Payment Method</label>
+<select id="paymentMethod" onchange="showPaymentDetails()">
+  <option value="">Select Payment Method</option>
+  <option value="Easypaisa">Easypaisa</option>
+  <option value="JazzCash">JazzCash</option>
+  <option value="Bank Transfer">Bank Transfer</option>
+</select>
+
+<div id="paymentDetails" class="payment-box">
+  Select a payment method.
+</div>
+
+<label>Transaction ID</label>
+<input id="transactionId" placeholder="Enter transaction ID">
+
+<label>Payment Screenshot</label>
+<input id="paymentScreenshot" type="file" accept="image/*">
+
+<label>Order Notes</label>
+<textarea id="notes" rows="4"
+placeholder="Any additional information"></textarea>
+
+<button class="submit" onclick="submitOrder()">
+  Submit Order
+</button>
+
+<button id="whatsappBtn" class="whatsapp" onclick="sendWhatsApp()">
+  Send Order on WhatsApp
+</button>
+
+</div>
+
+</div>
+
+<footer>
+  © 2026 Amjad Creative Store. All Rights Reserved.
+</footer>
 
 <script>
-const SUPABASE_URL =
-"https://mchewsmjbkexojdaruhj.supabase.co";
 
-const SUPABASE_ANON_KEY =
-sb_publishable_py_FXTwY_RjIuADMGvSDmw_1BjzedKu
+const STORE_WHATSAPP = "923438038809";
 
-const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
+const EASYPAISA_NAME = "Amjad Khan";
+const EASYPAISA_NUMBER = "YOUR_EASYPAISA_NUMBER";
 
-async function test() {
+const JAZZCASH_NAME = "Amjad Khan";
+const JAZZCASH_NUMBER = "YOUR_JAZZCASH_NUMBER";
 
-  const result = document.getElementById("result");
+const BANK_DETAILS =
+"Bank Transfer: Contact us on WhatsApp for bank details.";
 
-  const { data, error } =
-    await db.from("Product").select("*");
+let selectedProduct = "";
+let selectedPrice = "";
+let whatsappMessage = "";
 
-  if (error) {
-    result.innerHTML =
-      "<h2>ERROR</h2><pre>" +
-      JSON.stringify(error, null, 2) +
-      "</pre>";
+function openOrder(product, price){
+
+  selectedProduct = product;
+  selectedPrice = price;
+
+  document.getElementById("productName").value = product;
+  document.getElementById("productPrice").value = "Rs. " + price;
+
+  document.getElementById("orderBox").style.display = "block";
+
+  window.scrollTo({
+    top: document.getElementById("orderBox").offsetTop - 20,
+    behavior:"smooth"
+  });
+}
+
+function showPaymentDetails(){
+
+  const method =
+    document.getElementById("paymentMethod").value;
+
+  const box =
+    document.getElementById("paymentDetails");
+
+  if(method === "Easypaisa"){
+
+    box.innerHTML =
+      "<strong>Easypaisa</strong><br>" +
+      "Account Name: " + EASYPAISA_NAME + "<br>" +
+      "Account Number: " + EASYPAISA_NUMBER;
+
+  }else if(method === "JazzCash"){
+
+    box.innerHTML =
+      "<strong>JazzCash</strong><br>" +
+      "Account Name: " + JAZZCASH_NAME + "<br>" +
+      "Account Number: " + JAZZCASH_NUMBER;
+
+  }else if(method === "Bank Transfer"){
+
+    box.innerHTML =
+      "<strong>Bank Transfer</strong><br>" +
+      BANK_DETAILS;
+
+  }else{
+
+    box.innerHTML =
+      "Select a payment method.";
+
+  }
+}
+
+function submitOrder(){
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("customerPhone").value.trim();
+
+  const email =
+    document.getElementById("customerEmail").value.trim();
+
+  const payment =
+    document.getElementById("paymentMethod").value;
+
+  const transaction =
+    document.getElementById("transactionId").value.trim();
+
+  const notes =
+    document.getElementById("notes").value.trim();
+
+  if(!name || !phone || !payment || !transaction){
+
+    alert(
+      "Please complete your name, WhatsApp number, payment method and transaction ID."
+    );
+
     return;
   }
 
-  result.innerHTML =
-    "<h2>SUCCESS</h2><pre>" +
-    JSON.stringify(data, null, 2) +
-    "</pre>";
+  whatsappMessage =
+    "NEW ORDER%0A%0A" +
+    "Product: " + encodeURIComponent(selectedProduct) + "%0A" +
+    "Price: Rs. " + encodeURIComponent(selectedPrice) + "%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
+    "Email: " + encodeURIComponent(email) + "%0A" +
+    "Payment: " + encodeURIComponent(payment) + "%0A" +
+    "Transaction ID: " + encodeURIComponent(transaction) + "%0A" +
+    "Notes: " + encodeURIComponent(notes);
+
+  document.getElementById("whatsappBtn").style.display = "block";
+
+  alert(
+    "Order details are ready. Please send the order on WhatsApp."
+  );
 }
 
-test();
+function sendWhatsApp(){
+
+  const url =
+    "https://wa.me/" +
+    STORE_WHATSAPP +
+    "?text=" +
+    whatsappMessage;
+
+  window.open(url,"_blank");
+}
+
 </script>
 
 </body>
-</html>
+  </html>
